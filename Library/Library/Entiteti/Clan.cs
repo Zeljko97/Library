@@ -21,5 +21,9 @@ namespace Library.Entiteti
         public string brojLicneKarte { get; set; }
         public List<MongoDBRef> iznajmljeneKnjige { get; set; }
 
+        //dodato zbog logovanja
+        public string username { get; set; }
+        public string password { get; set; }
+
     }
 }

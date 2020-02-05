@@ -43,8 +43,16 @@ namespace Library
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormZaposleni fz = new FormZaposleni();
-            fz.Show();
+            FormZaposleniLogging fzl = new FormZaposleniLogging();
+            fzl.Show();
+            //FormZaposleni fz = new FormZaposleni();
+            //fz.Show();
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            FormAdmin fa = new FormAdmin();
+            fa.Show();
         }
     }
 }

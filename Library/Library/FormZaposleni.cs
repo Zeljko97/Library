@@ -66,22 +66,30 @@ namespace Library
 
         private void btnNaslovKnjige_Click(object sender, EventArgs e)
         {
-            var connectionString = "mongodb://localhost/?safe=true";
-            var server = MongoServer.Create(connectionString);
-            var db = server.GetDatabase("Biblioteka");
-
-            var collection = db.GetCollection<Knjiga>("knjige");
-
-            List<Knjiga> knjige = new List<Knjiga>();
-
-            foreach (Knjiga k in collection.Find(Query.EQ("naslov", txtKnjiga.Text)))
+            if (String.IsNullOrEmpty(txtKnjiga.Text))
             {
-                knjige.Add(k);
+                MessageBox.Show("Niste uneli naslov knjige da biste uspesno pretrazili bazu.", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                var connectionString = "mongodb://localhost/?safe=true";
+                var server = MongoServer.Create(connectionString);
+                var db = server.GetDatabase("Biblioteka");
 
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = knjige;
-            dataGridView1.Columns["Id"].Visible = false;
+                var collection = db.GetCollection<Knjiga>("knjige");
+
+                List<Knjiga> knjige = new List<Knjiga>();
+                foreach (Knjiga k in collection.Find(Query.EQ("naslov", txtKnjiga.Text)))
+                {
+                    knjige.Add(k);
+                }
+
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = knjige;
+                dataGridView1.Columns["Id"].Visible = false;
+                dataGridView1.Columns["Sektor"].Visible = false;
+
+            }
         }
 
         private void btnZanr_Click(object sender, EventArgs e)
@@ -214,6 +222,16 @@ namespace Library
             MessageBox.Show(datum + " --- " + datumVracanje);
           //  IzdataKnjiga izdataKnjiga = new IzdataKnjiga { knjiga = (string)dataGridView1[1, indexRow].Value, datumIzdavanja = datum, datumVracanja = datumVracanje, Clan = cbClanovi.SelectedItem };
 
+        }
+
+        private void FormZaposleni_Load(object sender, EventArgs e)
+        {
+            Text = " " + FormZaposleniLogging.logovani.ime + " " +FormZaposleniLogging.logovani.prezime;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

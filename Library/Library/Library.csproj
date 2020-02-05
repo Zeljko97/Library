@@ -80,15 +80,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entiteti\Clan.cs" />
     <Compile Include="Entiteti\IzdataKnjiga.cs" />
     <Compile Include="Entiteti\Knjiga.cs" />
     <Compile Include="Entiteti\Sektor.cs" />
+    <Compile Include="Entiteti\Zaposleni.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAzurirajKnjigu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAzurirajKnjigu.Designer.cs">
+      <DependentUpon>FormAzurirajKnjigu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodajKnjigu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajKnjigu.Designer.cs">
+      <DependentUpon>FormDodajKnjigu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodajZaposlenog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajZaposlenog.Designer.cs">
+      <DependentUpon>FormDodajZaposlenog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodavanjeClana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodavanjeClana.Designer.cs">
+      <DependentUpon>FormDodavanjeClana.cs</DependentUpon>
     </Compile>
     <Compile Include="FormIzdavanje.cs">
       <SubType>Form</SubType>
@@ -102,13 +139,40 @@
     <Compile Include="FormZaposleni.Designer.cs">
       <DependentUpon>FormZaposleni.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormZaposleniLogging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormZaposleniLogging.Designer.cs">
+      <DependentUpon>FormZaposleniLogging.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAzurirajKnjigu.resx">
+      <DependentUpon>FormAzurirajKnjigu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodajKnjigu.resx">
+      <DependentUpon>FormDodajKnjigu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodajZaposlenog.resx">
+      <DependentUpon>FormDodajZaposlenog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodavanjeClana.resx">
+      <DependentUpon>FormDodavanjeClana.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormZaposleni.resx">
       <DependentUpon>FormZaposleni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormZaposleniLogging.resx">
+      <DependentUpon>FormZaposleniLogging.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -136,6 +200,33 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackGround.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Administrator.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Library.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Books-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginZaposleni.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zaposleni.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\knjige.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -22,3 +22,36 @@ D:\FAKULTET\IV GODINA\Napredne baze podataka\Library\Library\obj\Debug\Library.c
 D:\FAKULTET\IV GODINA\Napredne baze podataka\Library\Library\obj\Debug\Library.exe
 D:\FAKULTET\IV GODINA\Napredne baze podataka\Library\Library\obj\Debug\Library.pdb
 D:\FAKULTET\IV GODINA\Napredne baze podataka\Library\Library\obj\Debug\Library.FormZaposleni.resources
+E:\GitHub\Library\Library\Library\bin\Debug\Library.exe.config
+E:\GitHub\Library\Library\Library\bin\Debug\Library.exe
+E:\GitHub\Library\Library\Library\bin\Debug\Library.pdb
+E:\GitHub\Library\Library\Library\bin\Debug\Crc32C.NET.dll
+E:\GitHub\Library\Library\Library\bin\Debug\DnsClient.dll
+E:\GitHub\Library\Library\Library\bin\Debug\MongoDB.Bson.dll
+E:\GitHub\Library\Library\Library\bin\Debug\MongoDB.Driver.Core.dll
+E:\GitHub\Library\Library\Library\bin\Debug\MongoDB.Driver.dll
+E:\GitHub\Library\Library\Library\bin\Debug\SharpCompress.dll
+E:\GitHub\Library\Library\Library\bin\Debug\Snappy.NET.dll
+E:\GitHub\Library\Library\Library\bin\Debug\System.Buffers.dll
+E:\GitHub\Library\Library\Library\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\GitHub\Library\Library\Library\bin\Debug\Crc32C.NET.xml
+E:\GitHub\Library\Library\Library\bin\Debug\DnsClient.xml
+E:\GitHub\Library\Library\Library\bin\Debug\MongoDB.Driver.Core.xml
+E:\GitHub\Library\Library\Library\bin\Debug\Snappy.NET.xml
+E:\GitHub\Library\Library\Library\bin\Debug\System.Buffers.xml
+E:\GitHub\Library\Library\Library\obj\Debug\Library.csprojAssemblyReference.cache
+E:\GitHub\Library\Library\Library\obj\Debug\Library.Form1.resources
+E:\GitHub\Library\Library\Library\obj\Debug\Library.FormZaposleni.resources
+E:\GitHub\Library\Library\Library\obj\Debug\Library.Properties.Resources.resources
+E:\GitHub\Library\Library\Library\obj\Debug\Library.csproj.GenerateResource.cache
+E:\GitHub\Library\Library\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+E:\GitHub\Library\Library\Library\obj\Debug\Library.csproj.CopyComplete
+E:\GitHub\Library\Library\Library\obj\Debug\Library.exe
+E:\GitHub\Library\Library\Library\obj\Debug\Library.pdb
+E:\GitHub\Library\Library\Library\obj\Debug\Library.FormAdmin.resources
+E:\GitHub\Library\Library\Library\obj\Debug\Library.Admin.resources
+E:\GitHub\Library\Library\Library\obj\Debug\Library.FormZaposleniLogging.resources
+E:\GitHub\Library\Library\Library\obj\Debug\Library.FormDodajZaposlenog.resources
+E:\GitHub\Library\Library\Library\obj\Debug\Library.FormDodajKnjigu.resources
+E:\GitHub\Library\Library\Library\obj\Debug\Library.FormAzurirajKnjigu.resources
+E:\GitHub\Library\Library\Library\obj\Debug\Library.FormDodavanjeClana.resources
