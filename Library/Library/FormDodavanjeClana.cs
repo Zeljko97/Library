@@ -71,7 +71,7 @@ namespace Library
                 var collection = database.GetCollection<Clan>("clanovi");
                 Clan c = new Clan
                 {
-                    brojClanskeKarte = Convert.ToInt32(txtBroj.Text),
+                    brojClanskeKarte =txtBroj.Text,
                     ime = txtIme.Text,
                     prezime = txtPrezime.Text,
                     zanimanje = txtZanimanje.Text,

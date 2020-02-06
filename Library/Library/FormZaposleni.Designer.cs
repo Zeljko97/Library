@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtImePisca = new System.Windows.Forms.TextBox();
             this.btnPisca = new System.Windows.Forms.Button();
@@ -53,9 +53,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnUserPass = new System.Windows.Forms.Button();
             this.btnSveKnjige = new System.Windows.Forms.Button();
+            this.btnUserPass = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnUcitajZahteve = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -65,14 +69,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -289,7 +293,7 @@
             // btnIzdavanje
             // 
             this.btnIzdavanje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIzdavanje.Location = new System.Drawing.Point(432, 12);
+            this.btnIzdavanje.Location = new System.Drawing.Point(825, 211);
             this.btnIzdavanje.Name = "btnIzdavanje";
             this.btnIzdavanje.Size = new System.Drawing.Size(121, 35);
             this.btnIzdavanje.TabIndex = 20;
@@ -322,16 +326,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Pretrazivanje";
             // 
-            // btnUserPass
-            // 
-            this.btnUserPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserPass.Location = new System.Drawing.Point(17, 126);
-            this.btnUserPass.Name = "btnUserPass";
-            this.btnUserPass.Size = new System.Drawing.Size(165, 38);
-            this.btnUserPass.TabIndex = 22;
-            this.btnUserPass.Text = "Promeni Username/Password";
-            this.btnUserPass.UseVisualStyleBackColor = true;
-            // 
             // btnSveKnjige
             // 
             this.btnSveKnjige.BackgroundImage = global::Library.Properties.Resources.knjige;
@@ -344,6 +338,16 @@
             this.btnSveKnjige.UseVisualStyleBackColor = true;
             this.btnSveKnjige.Click += new System.EventHandler(this.btnSveKnjige_Click);
             // 
+            // btnUserPass
+            // 
+            this.btnUserPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserPass.Location = new System.Drawing.Point(17, 126);
+            this.btnUserPass.Name = "btnUserPass";
+            this.btnUserPass.Size = new System.Drawing.Size(165, 38);
+            this.btnUserPass.TabIndex = 22;
+            this.btnUserPass.Text = "Promeni Username/Password";
+            this.btnUserPass.UseVisualStyleBackColor = true;
+            // 
             // btnLogout
             // 
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -355,12 +359,52 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(289, 143);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(152, 21);
+            this.comboBox1.TabIndex = 24;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(286, 127);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Sektor";
+            // 
+            // btnUcitajZahteve
+            // 
+            this.btnUcitajZahteve.Location = new System.Drawing.Point(825, 1);
+            this.btnUcitajZahteve.Name = "btnUcitajZahteve";
+            this.btnUcitajZahteve.Size = new System.Drawing.Size(103, 35);
+            this.btnUcitajZahteve.TabIndex = 26;
+            this.btnUcitajZahteve.Text = "Ucitaj zahteve";
+            this.btnUcitajZahteve.UseVisualStyleBackColor = true;
+            this.btnUcitajZahteve.Click += new System.EventHandler(this.btnUcitajZahteve_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(825, 43);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(240, 148);
+            this.listView1.TabIndex = 28;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // FormZaposleni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(821, 443);
+            this.ClientSize = new System.Drawing.Size(1077, 443);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.btnUcitajZahteve);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnUserPass);
             this.Controls.Add(this.panel1);
@@ -420,5 +464,9 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnUserPass;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnUcitajZahteve;
+        private System.Windows.Forms.ListView listView1;
     }
 }

@@ -19,6 +19,11 @@ namespace Library
 {
     public partial class FormDodajKnjigu : Form
     {
+
+        string tagovi = "";
+
+
+
         public FormDodajKnjigu()
         {
             InitializeComponent();
@@ -68,25 +73,95 @@ namespace Library
             }
             else
             {
+
+               
+                
+                ///tagovi
+                for(int i = 0;i<checkedListBox1.Items.Count;i++)
+                {
+                    if(checkedListBox1.GetItemChecked(i))
+                    {
+                        tagovi += (checkedListBox1.Items[i]).ToString() + ", ";
+                    }
+                }
+
+
+
                 var connectionString = "mongodb://localhost/?safe=true";
                 var server = MongoServer.Create(connectionString);
                 var database = server.GetDatabase("Biblioteka");
 
                 var collection = database.GetCollection<Knjiga>("knjige");
+
+                var sektoriCollection = database.GetCollection<Sektor>("sektori");
+
+
                 //ovde treba ovo za oznake,ali to nisam mogao provaljujem
+            
+                
+
+
                 Knjiga k = new Knjiga
                 {
                     naslov = txtNaslov.Text,
                     autor = txtAutor.Text,
                     izdavac = txtIzdavac.Text,
-                    zanr = cbPovez.SelectedItem.ToString(),
+                    zanr = cbZanr.SelectedItem.ToString(),
                     brojPrimeraka = Convert.ToInt32(txtBrojPrimeraka.Text),
                     brojStrana = Convert.ToInt32(txtBrojStrana.Text),
-                    povez = cbPovez.SelectedItem.ToString()
+                    povez = cbPovez.SelectedItem.ToString(),
+                    oznake = new List<string> {tagovi},
+                    
+                    
+
+
                 };
+               
+                //u kom se sektoru nalazi knjiga
+                Sektor sektor = new Sektor();
+                foreach(Sektor s in sektoriCollection.FindAll())
+                {
+                    if(s.oznakaSektora == comboBox1.SelectedItem.ToString())
+                    {
+                        sektor = s;
+                    }
+                }
+
+
+                sektor.knjigeUSektoru.Add(new MongoDBRef("knjige", k.naslov));
+                k.Sektor = new MongoDBRef("sektori", sektor.Id);
+               
                 collection.Insert(k);
+
+                collection.Save(k);
+                sektoriCollection.Save(sektor);
                 MessageBox.Show(txtNaslov.Text + " knjiga je uspesno dodata", "Dodavanje uspesno", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
+
+                
+
+
+            }
+        }
+
+        private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+          
+        }
+
+        private void FormDodajKnjigu_Load(object sender, EventArgs e)
+        {
+            var connectionString = "mongodb://localhost/?safe=true";
+            var server = MongoServer.Create(connectionString);
+            var database = server.GetDatabase("Biblioteka");
+
+            var collection = database.GetCollection<Sektor>("sektori");
+
+            MongoCursor<Sektor> sektori = collection.FindAll();
+
+            foreach(Sektor s in sektori.ToArray<Sektor>())
+            {
+                comboBox1.Items.Add(s.oznakaSektora.ToString());
             }
         }
     }

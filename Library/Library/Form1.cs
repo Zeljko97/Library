@@ -31,14 +31,30 @@ namespace Library
             var server = MongoServer.Create(connectionString);
             var database = server.GetDatabase("Biblioteka");
 
-            var collection = database.GetCollection<Knjiga>("knjige");
+            var collection = database.GetCollection<Clan>("clanovi");
+            var coll = database.GetCollection<IzdataKnjiga>("izdateKnjige");
+            var knjigeColl = database.GetCollection<Knjiga>("knjige");
 
-            MongoCursor<Knjiga> knjige = collection.FindAll();
-
-            foreach(Knjiga k in knjige.ToArray<Knjiga>())
+           /* Clan clan1 = new Clan();
+            foreach (Clan c in collection.Find(Query.EQ("brojClanskeKarte", "3")))
             {
-                MessageBox.Show(k.brojPrimeraka.ToString());
+                clan1 = c;
             }
+            */
+          
+            Knjiga knjiga= new Knjiga();
+            List<MongoDBRef> kn = new List<MongoDBRef>();
+            foreach (Clan c in collection.Find(Query.EQ("brojClanskeKarte", "2")))
+            {
+                kn = c.iznajmljeneKnjige;
+            }
+
+           
+            knjiga.naslov = kn[0].ToString();
+           
+            MessageBox.Show(knjiga.naslov);
+
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -53,6 +69,17 @@ namespace Library
         {
             FormAdmin fa = new FormAdmin();
             fa.Show();
+        }
+
+        private void btnOpis_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnKnjige_Click(object sender, EventArgs e)
+        {
+            FormKnjigeINarucivanje f = new FormKnjigeINarucivanje();
+            f.Show();
         }
     }
 }

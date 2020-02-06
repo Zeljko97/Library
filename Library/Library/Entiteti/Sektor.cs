@@ -12,7 +12,11 @@ namespace Library.Entiteti
     {
         public ObjectId Id {get;set;}
         public string oznakaSektora { get; set; }
-        public List<Knjiga> knjigeUSektoru {get;set;}
+        public List<MongoDBRef> knjigeUSektoru {get;set;}
 
+        public Sektor()
+        {
+            knjigeUSektoru = new List<MongoDBRef>();
+        }
     }
 }

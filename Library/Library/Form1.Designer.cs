@@ -32,6 +32,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.btnOpis = new System.Windows.Forms.Button();
+            this.btnKnjige = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -75,6 +76,17 @@
             this.btnOpis.TabIndex = 4;
             this.btnOpis.Text = "Opis";
             this.btnOpis.UseVisualStyleBackColor = true;
+            this.btnOpis.Click += new System.EventHandler(this.btnOpis_Click);
+            // 
+            // btnKnjige
+            // 
+            this.btnKnjige.Location = new System.Drawing.Point(12, 20);
+            this.btnKnjige.Name = "btnKnjige";
+            this.btnKnjige.Size = new System.Drawing.Size(123, 38);
+            this.btnKnjige.TabIndex = 5;
+            this.btnKnjige.Text = "Pregledaj knjige";
+            this.btnKnjige.UseVisualStyleBackColor = true;
+            this.btnKnjige.Click += new System.EventHandler(this.btnKnjige_Click);
             // 
             // Form1
             // 
@@ -83,6 +95,7 @@
             this.BackgroundImage = global::Library.Properties.Resources.Library;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(565, 355);
+            this.Controls.Add(this.btnKnjige);
             this.Controls.Add(this.btnOpis);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.button2);
@@ -103,6 +116,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnOpis;
+        private System.Windows.Forms.Button btnKnjige;
     }
 }
 

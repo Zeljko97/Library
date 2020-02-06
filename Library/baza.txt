@@ -13,14 +13,25 @@ db.knjige.insert({"naslov":"Palcica", "autor":"Hans Kristijan Andersen", "zanr":
 
 /////clanovi
 
-db.clanovi.insert({"brojClanskeKarte":1, "ime":"Jovan", "prezime":"Peric", "zanimanje":"Profesor", "adresa":"Rentgenova 8", "brojTelefona":"061238133", "brojLicneKarte":"256147", "username":"user1","password":"user1"});
-db.clanovi.insert({"brojClanskeKarte":2, "ime":"Marko", "prezime":"Jankovic", "zanimanje":"Advokat", "adresa":"Dragise Cvetkovica 21", "brojTelefona":"061234393", "brojLicneKarte":"179647", "username":"user2","password":"mongo"});
-db.clanovi.insert({"brojClanskeKarte":3, "ime":"Milan", "prezime":"Markovic", "zanimanje":"Programer", "adresa":"Trg Republike A2, Nis", "brojTelefona":"0635847133", "brojLicneKarte":"694712", "username":"user2","password":"mongo"});
+db.clanovi.insert({"brojClanskeKarte":"1", "ime":"Jovan", "prezime":"Peric", "zanimanje":"Profesor", "adresa":"Rentgenova 8", "brojTelefona":"061238133", "brojLicneKarte":"256147", "username":"user1","password":"user1"});
+db.clanovi.insert({"brojClanskeKarte":"2", "ime":"Marko", "prezime":"Jankovic", "zanimanje":"Advokat", "adresa":"Dragise Cvetkovica 21", "brojTelefona":"061234393", "brojLicneKarte":"179647", "username":"user2","password":"mongo"});
+db.clanovi.insert({"brojClanskeKarte":"3", "ime":"Milan", "prezime":"Markovic", "zanimanje":"Programer", "adresa":"Trg Republike A2, Nis", "brojTelefona":"0635847133", "brojLicneKarte":"694712", "username":"user2","password":"mongo"});
 
 
 //////Zaposleni
 ime,prezime,jmbg,datum_rodjenja,radni_staz
+
+
 db.zaposleni.insert({"ime":"Marko","prezime":"Miloradovic","JMBG":"1809997752012","datum_rodjenja":"18-09-1997","radni_staz":4,"username":"Mare97","password":"mongo"});
 db.zaposleni.insert({"ime":"Milena","prezime":"Stanisic","JMBG":"1542015447777","datum_rodjenja":"02-04-1990","radni_staz":7,"username":"Mima","password":"mongo11"});
 db.zaposleni.insert({"ime":"Ivana","prezime":"Novakovic","JMBG":"1505995741114","datum_rodjenja":"15-05-1995","radni_staz":6,"username":"Ivana123","password":"123123"});
 db.zaposleni.insert({"ime":"Zeljko","prezime":"Rmza","JMBG":"1010994","datum_rodjenja":"10-10-1994","radni_staz":2,"username":"Zeljko","password":"rmza"});
+
+
+
+
+///sektori
+
+db.sektori.insert({"oznakaSektora":"1"});
+db.sektori.insert({"oznakaSektora":"2"});
+db.sektori.insert({"oznakaSektora":"2a"});

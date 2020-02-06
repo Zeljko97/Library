@@ -90,6 +90,7 @@
     <Compile Include="Entiteti\IzdataKnjiga.cs" />
     <Compile Include="Entiteti\Knjiga.cs" />
     <Compile Include="Entiteti\Sektor.cs" />
+    <Compile Include="Entiteti\Zahtev.cs" />
     <Compile Include="Entiteti\Zaposleni.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -133,6 +134,18 @@
     <Compile Include="FormIzdavanje.Designer.cs">
       <DependentUpon>FormIzdavanje.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormKnjigeINarucivanje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKnjigeINarucivanje.Designer.cs">
+      <DependentUpon>FormKnjigeINarucivanje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNaruci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNaruci.Designer.cs">
+      <DependentUpon>FormNaruci.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormZaposleni.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +180,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDodavanjeClana.resx">
       <DependentUpon>FormDodavanjeClana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKnjigeINarucivanje.resx">
+      <DependentUpon>FormKnjigeINarucivanje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNaruci.resx">
+      <DependentUpon>FormNaruci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormZaposleni.resx">
       <DependentUpon>FormZaposleni.cs</DependentUpon>
@@ -227,6 +246,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\knjige.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Blago cara Radovana.jpg" />
+    <Content Include="Resources\Dobro jutro Beograde.jpg" />
+    <Content Include="Resources\Fama o biciklistima.jpg" />
+    <Content Include="Resources\Ljubav u kasabi.jpg" />
+    <Content Include="Resources\Macak i skakutavo jaje.jpg" />
+    <Content Include="Resources\Na Drini cuprija.jpg" />
+    <Content Include="Resources\Palcica.jpg" />
+    <Content Include="Resources\Tajna uspesne dece.jpg" />
+    <Content Include="Resources\Vinetu.jpg" />
+    <Content Include="Resources\Zlocin i kazna.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

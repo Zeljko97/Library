@@ -12,7 +12,7 @@ namespace Library.Entiteti
     public class Clan
     {
         public ObjectId Id { get; set; }
-        public int brojClanskeKarte { get; set; }
+        public string brojClanskeKarte { get; set; }
         public string ime { get; set; }
         public string prezime { get; set; }
         public string zanimanje { get; set; }
@@ -24,6 +24,11 @@ namespace Library.Entiteti
         //dodato zbog logovanja
         public string username { get; set; }
         public string password { get; set; }
+
+        public Clan()
+        {
+            iznajmljeneKnjige = new List<MongoDBRef>();
+        }
 
     }
 }
