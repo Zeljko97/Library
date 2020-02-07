@@ -73,7 +73,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 391);
+            this.ClientSize = new System.Drawing.Size(813, 391);
             this.Controls.Add(this.btnNaruci);
             this.Controls.Add(this.btnIzaberi);
             this.Controls.Add(this.comboBox1);

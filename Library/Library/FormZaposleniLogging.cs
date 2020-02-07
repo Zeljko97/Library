@@ -70,5 +70,9 @@ namespace Library
             }
         }
 
+        private void FormZaposleniLogging_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

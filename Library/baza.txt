@@ -4,7 +4,6 @@ db.knjige.insert({"naslov":"Na Drini cuprija","autor":"Ivo Andric", "zanr":"roma
 db.knjige.insert({"naslov":"Blago cara Radovana","autor":"Jovan Ducic", "zanr":"roman", "izdavac":"Vulkan", "povez":"tvrdi", "brojStrana":180, "brojPrimeraka":20, "oznake":["roman","domaci autor"]});
 db.knjige.insert({"naslov":"Dobro jutro Beograde","autor":"Dusko Radovic", "zanr":"publicistika", "izdavac":"Laguna", "povez":"tvrdi", "brojStrana":300, "brojPrimeraka":10, "oznake":["publicistika","domaci autor"]});
 db.knjige.insert({"naslov":"Ljubav u kasabi", "autor":"Ivo Andric", "zanr":"roman", "izdavac":"Laguna", "povez":"meki", "brojStrana":170, "brojPrimeraka":12, "oznake":["roman","domaci autor"]});
-
 db.knjige.insert({"naslov":"Tajna uspesne dece", "autor":"Pol Taf", "zanr":"psihologija", "izdavac":"Laguna", "povez":"meki", "brojStrana":230, "brojPrimeraka":1, "oznake":["psihologija","strani autor"]});
 db.knjige.insert({"naslov":"Macak i skakutavo jaje", "autor":"Andrija Milosevic", "zanr":"poezija", "izdavac":"Laguna", "povez":"meki", "brojStrana":30, "brojPrimeraka":16, "oznake":["decja knjiga","domaci autor","poezija"]});
 db.knjige.insert({"naslov":"Zlocin i kazna", "autor":"Fjodor Mihailovic Dostojevski", "zanr":"klasika", "izdavac":"Laguna", "povez":"meki", "brojStrana":300, "brojPrimeraka":20, "oznake":["roman","strani autor","klasika"]});
@@ -16,7 +15,8 @@ db.knjige.insert({"naslov":"Palcica", "autor":"Hans Kristijan Andersen", "zanr":
 db.clanovi.insert({"brojClanskeKarte":"1", "ime":"Jovan", "prezime":"Peric", "zanimanje":"Profesor", "adresa":"Rentgenova 8", "brojTelefona":"061238133", "brojLicneKarte":"256147", "username":"user1","password":"user1"});
 db.clanovi.insert({"brojClanskeKarte":"2", "ime":"Marko", "prezime":"Jankovic", "zanimanje":"Advokat", "adresa":"Dragise Cvetkovica 21", "brojTelefona":"061234393", "brojLicneKarte":"179647", "username":"user2","password":"mongo"});
 db.clanovi.insert({"brojClanskeKarte":"3", "ime":"Milan", "prezime":"Markovic", "zanimanje":"Programer", "adresa":"Trg Republike A2, Nis", "brojTelefona":"0635847133", "brojLicneKarte":"694712", "username":"user2","password":"mongo"});
-
+db.clanovi.insert({"brojClanskeKarte":"4", "ime":"Marko", "prezime":"Miloradovic", "zanimanje":"Programer", "adresa":"Sedmi Juli 38/20, Nis", "brojTelefona":"0692011026", "brojLicneKarte":"694712", "username":"mare","password":"mongo","Iznajmljene":["Na Drini cuprija","Tajna uspesne dece"]});
+//dal da dodajemo iznajmljene knjige? kao iz onog primera oznake da bude Iznajmljene knjige:
 
 //////Zaposleni
 ime,prezime,jmbg,datum_rodjenja,radni_staz

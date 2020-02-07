@@ -81,5 +81,11 @@ namespace Library
             FormKnjigeINarucivanje f = new FormKnjigeINarucivanje();
             f.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormClanLogIn fcli = new FormClanLogIn();
+            fcli.Show();
+        }
     }
 }

@@ -110,6 +110,24 @@
     <Compile Include="FormAzurirajKnjigu.Designer.cs">
       <DependentUpon>FormAzurirajKnjigu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormClanBiblioteke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClanBiblioteke.Designer.cs">
+      <DependentUpon>FormClanBiblioteke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormClanChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClanChangePassword.Designer.cs">
+      <DependentUpon>FormClanChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormClanLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClanLogIn.Designer.cs">
+      <DependentUpon>FormClanLogIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDodajKnjigu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +170,12 @@
     <Compile Include="FormZaposleni.Designer.cs">
       <DependentUpon>FormZaposleni.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormZaposleniChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormZaposleniChangePassword.Designer.cs">
+      <DependentUpon>FormZaposleniChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormZaposleniLogging.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +196,15 @@
     <EmbeddedResource Include="FormAzurirajKnjigu.resx">
       <DependentUpon>FormAzurirajKnjigu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormClanBiblioteke.resx">
+      <DependentUpon>FormClanBiblioteke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClanChangePassword.resx">
+      <DependentUpon>FormClanChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClanLogIn.resx">
+      <DependentUpon>FormClanLogIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDodajKnjigu.resx">
       <DependentUpon>FormDodajKnjigu.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormZaposleni.resx">
       <DependentUpon>FormZaposleni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormZaposleniChangePassword.resx">
+      <DependentUpon>FormZaposleniChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormZaposleniLogging.resx">
       <DependentUpon>FormZaposleniLogging.cs</DependentUpon>
@@ -249,13 +285,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Blago cara Radovana.jpg" />
+    <None Include="Resources\clanBackground.jpg" />
+    <None Include="Resources\Books.png" />
     <Content Include="Resources\Dobro jutro Beograde.jpg" />
     <Content Include="Resources\Fama o biciklistima.jpg" />
+    <None Include="Resources\FindBook.png" />
+    <None Include="Resources\find.png" />
     <Content Include="Resources\Ljubav u kasabi.jpg" />
     <Content Include="Resources\Macak i skakutavo jaje.jpg" />
     <Content Include="Resources\Na Drini cuprija.jpg" />
     <Content Include="Resources\Palcica.jpg" />
     <Content Include="Resources\Tajna uspesne dece.jpg" />
+    <None Include="Resources\user-settings-icon.png" />
+    <None Include="Resources\userBackGround.jpeg" />
     <Content Include="Resources\Vinetu.jpg" />
     <Content Include="Resources\Zlocin i kazna.jpg" />
   </ItemGroup>

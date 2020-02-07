@@ -87,3 +87,9 @@ C:\GITHUB\Library\Library\Library\obj\Debug\Library.Properties.Resources.resourc
 C:\GITHUB\Library\Library\Library\obj\Debug\Library.csproj.GenerateResource.Cache
 C:\GITHUB\Library\Library\Library\obj\Debug\Library.exe
 C:\GITHUB\Library\Library\Library\obj\Debug\Library.pdb
+E:\GitHub\Library\Library\Library\obj\Debug\Library.FormKnjigeINarucivanje.resources
+E:\GitHub\Library\Library\Library\obj\Debug\Library.FormNaruci.resources
+E:\GitHub\Library\Library\Library\obj\Debug\Library.FormClanBiblioteke.resources
+E:\GitHub\Library\Library\Library\obj\Debug\Library.FormClanLogIn.resources
+E:\GitHub\Library\Library\Library\obj\Debug\Library.FormClanChangePassword.resources
+E:\GitHub\Library\Library\Library\obj\Debug\Library.FormZaposleniChangePassword.resources

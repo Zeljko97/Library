@@ -37,19 +37,11 @@ namespace Library
 
           MongoCursor<Knjiga> knjige= collection.FindAll();
 
-            
-            
-
             int loc1 = 10;
             int loc2 = 100;
 
             foreach (Knjiga k in knjige.ToArray<Knjiga>())
                 {
-
-                    
-                
-                    
-
                 PictureBox picturebox1 = new PictureBox();
                 Label label = new Label();
                
@@ -62,7 +54,6 @@ namespace Library
 
                     picturebox1.Size = new Size(80, 80);
                     picturebox1.BackColor = Color.Aqua;
-                    
                     picturebox1.Image = Image.FromFile("../../Resources/"+ k.naslov +".jpg");
 
                     picturebox1.SizeMode = PictureBoxSizeMode.StretchImage;
