@@ -38,7 +38,7 @@ namespace Library
             label4.Text = "Adresa: " + FormClanLogIn.trClan.adresa;
             label5.Text = "Broj telefona: " + FormClanLogIn.trClan.brojTelefona;
             label6.Text = "Broj licne karte:" + FormClanLogIn.trClan.brojLicneKarte;
-
+            label13.Text = "Broj clanske karte:" + FormClanLogIn.trClan.brojClanskeKarte;
             //var izn = database.GetCollection<Clan>("clanovi");
             //MongoCursor<Clan> clan = izn.Find(Query.EQ("Id", FormClanLogIn.trClan.Id));
             //foreach (Clan c in clan)
@@ -289,6 +289,63 @@ namespace Library
             this.Close();
             FormClanLogIn fcli = new FormClanLogIn();
             fcli.Show();
+        }
+
+        private void btnIznajmi_Click(object sender, EventArgs e)
+        {
+            var connectionString = "mongodb://localhost/?safe=true";
+            var server = MongoServer.Create(connectionString);
+            var database = server.GetDatabase("Biblioteka");
+
+            var collectionZahtevi = database.GetCollection<Zahtev>("zahtevi");
+
+
+            int index = dataGridView1.CurrentRow.Index;
+            Zahtev zahtev = new Zahtev { knjiga = (string)dataGridView1[1, index].Value, brojClanskeKarte = Int32.Parse(FormClanLogIn.trClan.brojClanskeKarte) };
+            collectionZahtevi.Insert(zahtev);
+
+            MessageBox.Show("Poslali ste zahtev za knjigom. ");
+
+
+        }
+
+        private void btnVratiKnjigu_Click(object sender, EventArgs e)
+        {
+            var connectionString = "mongodb://localhost/?safe=true";
+            var server = MongoServer.Create(connectionString);
+            var database = server.GetDatabase("Biblioteka");
+
+            var collection = database.GetCollection<Clan>("clanovi");
+            var coll = database.GetCollection<IzdataKnjiga>("izdateKnjige");
+            var knjigeColl = database.GetCollection<Knjiga>("knjige");
+
+            Clan clan = FormClanLogIn.trClan;
+
+      /*    foreach(MongoDBRef k in clan.iznajmljeneKnjige.ToList()  )
+          {
+              Knjiga knjiga = database.FetchDBRefAs<Knjiga>(k);
+              MessageBox.Show(knjiga.naslov);
+          }
+            */
+
+            foreach(Knjiga k in knjigeColl.FindAll())
+            {
+               for(int i = 0;i<clan.iznajmljeneKnjige.Count;i++)
+               {
+                   if (k.Id == clan.iznajmljeneKnjige[i].Id)
+                       list.Items.Add(k.naslov);
+               }
+            }
+           /* for(int i = 0;i<clan.iznajmljeneKnjige.Count;i++)
+            {
+                MessageBox.Show(clan.iznajmljeneKnjige[i].ToString());
+            }*/
+            
+
+
+      
+
+
         }
     }
 }

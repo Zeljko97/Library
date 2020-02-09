@@ -224,13 +224,20 @@ namespace Library
             {
                 knjiga1 = k;
             }
-            
+            //////////////////
 
+            clan1.iznajmljeneKnjige.Add(new MongoDBRef("iznajmljeneKnjige", knjiga1.Id));
+            knjiga1.IzdataClanovima.Add(new MongoDBRef("izdataClanovima", clan1.Id));
+
+            collectionClanovi.Save(clan1);
+            collectionKnjige.Save(knjiga1);
+
+            //////////////////
             string datum = DateTime.Now.ToString();
             string datumVracanje = DateTime.Now.AddDays(30).ToString();
 
             
-            IzdataKnjiga izdataKnjiga = new IzdataKnjiga { knjiga = (string)dataGridView1[1, indexRow].Value, datumIzdavanja = datum, datumVracanja = datumVracanje};
+       /*     IzdataKnjiga izdataKnjiga = new IzdataKnjiga { knjiga = (string)dataGridView1[1, indexRow].Value, datumIzdavanja = datum, datumVracanja = datumVracanje};
             collectionIzdateKnjige.Insert(izdataKnjiga);
 
             
@@ -240,8 +247,11 @@ namespace Library
                 
                  
             collectionIzdateKnjige.Save(izdataKnjiga);
-            collectionClanovi.Save(clan1);
-            MessageBox.Show("Izdata knjiga: " + izdataKnjiga.knjiga + "\n Datum vracanja: " + datumVracanje);
+            collectionClanovi.Save(clan1);*/
+           // MessageBox.Show("Izdata knjiga: " + izdataKnjiga.knjiga + "\n Datum vracanja: " + datumVracanje);
+
+            MessageBox.Show("Izdata knjiga: " + knjiga1.naslov + "\n Datum vracanja: " + datumVracanje);
+
         }
 
         private void FormZaposleni_Load(object sender, EventArgs e)
@@ -282,19 +292,21 @@ namespace Library
                 s = sektor;
             }
 
-            List<Knjiga> listaKnjiga = new List<Knjiga>();
-
-           
-                foreach(MongoDBRef knjigaRef in s.knjigeUSektoru.ToList())
+            List<Knjiga> knjigeLista = new List<Knjiga>();
+            
+            foreach(Knjiga k in collectionKnjige.FindAll())
+            {
+                for(int i = 0;i<s.knjigeUSektoru.Count;i++)
                 {
-                    Knjiga knjiga = db.FetchDBRefAs<Knjiga>(knjigaRef);
-                   
-                    listaKnjiga.Add(knjiga);
+                    if (k.Id == s.knjigeUSektoru[i].Id)
+                        knjigeLista.Add(k);
                 }
-           
+            }
 
-            dataGridView1.DataSource = listaKnjiga;
-             
+            dataGridView1.DataSource = knjigeLista;
+            dataGridView1.Columns["Id"].Visible = false;
+            
+   
             
         }
 

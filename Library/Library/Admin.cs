@@ -339,7 +339,16 @@ namespace Library
         }
         private void Admin_Load(object sender, EventArgs e)
         {
+            var connectionString = "mongodb://localhost/?safe=true";
+            var server = MongoServer.Create(connectionString);
+            var db = server.GetDatabase("Biblioteka");
 
+            var collectionSektori = db.GetCollection<Sektor>("sektori");
+
+            foreach (Sektor s in collectionSektori.FindAll())
+            {
+                comboBox1.Items.Add(s.oznakaSektora);
+            }
         }
 
         private void btnSortBrojStranica_Click(object sender, EventArgs e)
@@ -361,6 +370,41 @@ namespace Library
             dataGridView1.Columns["povez"].Visible = false;
             dataGridView1.Columns["brojStrana"].Visible = false;
             dataGridView1.Columns["brojPrimeraka"].Visible = false;
+        }
+
+        private void btnSektor_Click(object sender, EventArgs e)
+        {
+            int indexRow = dataGridView1.CurrentRow.Index;
+            string knjiga = (string)dataGridView1[1, indexRow].Value;
+
+
+
+            var connectionString = "mongodb://localhost/?safe=true";
+            var server = MongoServer.Create(connectionString);
+            var db = server.GetDatabase("Biblioteka");
+
+            var collectionKnjige = db.GetCollection<Knjiga>("knjige");
+            var collectionSektori = db.GetCollection<Sektor>("sektori");
+
+            Knjiga knjiga1 = new Knjiga();
+            foreach (Knjiga k in collectionKnjige.Find(Query.EQ("naslov", (string)dataGridView1[1, indexRow].Value)))
+            {
+                knjiga1 = k;
+            }
+
+            Sektor sektor1 = new Sektor();
+            foreach (Sektor s in collectionSektori.Find(Query.EQ("oznakaSektora", comboBox1.Text)))
+            {
+                sektor1 = s;
+            }
+
+            sektor1.knjigeUSektoru.Add(new MongoDBRef("knjigeUSektoru", knjiga1.Id));
+            knjiga1.Sektor = new MongoDBRef("sektori", sektor1.Id);
+            collectionSektori.Save(sektor1);
+            collectionKnjige.Save(knjiga1);
+
+            MessageBox.Show("Knjiga: " + knjiga1.naslov + "je sada u sektoru: " + sektor1.oznakaSektora + "."); 
+        
         }
 
         

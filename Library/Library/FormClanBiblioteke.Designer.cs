@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClanBiblioteke));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnVratiKnjigu = new System.Windows.Forms.Button();
@@ -90,6 +91,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnVratiKnjigu);
@@ -102,8 +104,18 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(27, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(647, 208);
+            this.panel1.Size = new System.Drawing.Size(647, 236);
             this.panel1.TabIndex = 0;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft MHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(3, 206);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(72, 26);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "label13";
             // 
             // button1
             // 
@@ -142,8 +154,9 @@
             this.btnVratiKnjigu.Name = "btnVratiKnjigu";
             this.btnVratiKnjigu.Size = new System.Drawing.Size(108, 59);
             this.btnVratiKnjigu.TabIndex = 7;
-            this.btnVratiKnjigu.Text = "Vrati selektovanu knjigu";
+            this.btnVratiKnjigu.Text = "Iznajmljene knjige";
             this.btnVratiKnjigu.UseVisualStyleBackColor = false;
+            this.btnVratiKnjigu.Click += new System.EventHandler(this.btnVratiKnjigu_Click);
             // 
             // list
             // 
@@ -227,7 +240,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(20, 228);
+            this.label7.Location = new System.Drawing.Point(20, 251);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(338, 23);
             this.label7.TabIndex = 6;
@@ -244,7 +257,7 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 268);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 299);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -382,11 +395,12 @@
             this.btnIznajmi.Text = "Iznajmi";
             this.ttIznajmi.SetToolTip(this.btnIznajmi, "Iznajmljivanje selektovane knjige.");
             this.btnIznajmi.UseVisualStyleBackColor = true;
+            this.btnIznajmi.Click += new System.EventHandler(this.btnIznajmi_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(24, 251);
+            this.label8.Location = new System.Drawing.Point(24, 275);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(290, 13);
             this.label8.TabIndex = 18;
@@ -640,7 +654,7 @@
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.BackgroundImage = global::Library.Properties.Resources.userBackGround;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1040, 576);
+            this.ClientSize = new System.Drawing.Size(1040, 612);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label8);
@@ -722,5 +736,6 @@
         private System.Windows.Forms.Button btnVratiKnjigu;
         private System.Windows.Forms.ListBox list;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label13;
     }
 }

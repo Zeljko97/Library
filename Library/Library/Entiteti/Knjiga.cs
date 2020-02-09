@@ -19,5 +19,12 @@ namespace Library.Entiteti
         public int brojPrimeraka { get; set; }
         public List<string> oznake { get; set; }
         public MongoDBRef Sektor { get; set; }
+        ///
+        public List<MongoDBRef> IzdataClanovima { get; set; }
+
+        public Knjiga()
+        {
+            IzdataClanovima = new List<MongoDBRef>();
+        }
     }
 }

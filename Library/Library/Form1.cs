@@ -42,17 +42,25 @@ namespace Library
             }
             */
           
-            Knjiga knjiga= new Knjiga();
+          /*  Knjiga knjiga= new Knjiga();
             List<MongoDBRef> kn = new List<MongoDBRef>();
-            foreach (Clan c in collection.Find(Query.EQ("brojClanskeKarte", "2")))
+            foreach (Clan c in collection.Find(Query.EQ("brojClanskeKarte", "4")))
             {
                 kn = c.iznajmljeneKnjige;
             }
 
            
-            knjiga.naslov = kn[0].ToString();
-           
-            MessageBox.Show(knjiga.naslov);
+            knjiga.naslov = kn[1].ToString();*/
+
+            
+
+            foreach(IzdataKnjiga ik in coll.FindAll())
+            {
+
+            }
+
+
+          //  MessageBox.Show(knjiga.naslov);
 
             
         }
