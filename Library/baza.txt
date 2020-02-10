@@ -15,7 +15,7 @@ db.knjige.insert({"naslov":"Palcica", "autor":"Hans Kristijan Andersen", "zanr":
 db.clanovi.insert({"brojClanskeKarte":"1", "ime":"Jovan", "prezime":"Peric", "zanimanje":"Profesor", "adresa":"Rentgenova 8", "brojTelefona":"061238133", "brojLicneKarte":"256147", "username":"user1","password":"user1"});
 db.clanovi.insert({"brojClanskeKarte":"2", "ime":"Marko", "prezime":"Jankovic", "zanimanje":"Advokat", "adresa":"Dragise Cvetkovica 21", "brojTelefona":"061234393", "brojLicneKarte":"179647", "username":"user2","password":"mongo"});
 db.clanovi.insert({"brojClanskeKarte":"3", "ime":"Milan", "prezime":"Markovic", "zanimanje":"Programer", "adresa":"Trg Republike A2, Nis", "brojTelefona":"0635847133", "brojLicneKarte":"694712", "username":"user2","password":"mongo"});
-db.clanovi.insert({"brojClanskeKarte":"4", "ime":"Marko", "prezime":"Miloradovic", "zanimanje":"Programer", "adresa":"Sedmi Juli 38/20, Nis", "brojTelefona":"0692011026", "brojLicneKarte":"694712", "username":"mare","password":"mongo","Iznajmljene":["Na Drini cuprija","Tajna uspesne dece"]});
+db.clanovi.insert({"brojClanskeKarte":"4", "ime":"Marko", "prezime":"Miloradovic", "zanimanje":"Programer", "adresa":"Sedmi Juli 38/20, Nis", "brojTelefona":"0692011026", "brojLicneKarte":"694712", "username":"mare","password":"mongo"});
 //dal da dodajemo iznajmljene knjige? kao iz onog primera oznake da bude Iznajmljene knjige:
 
 //////Zaposleni

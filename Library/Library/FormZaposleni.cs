@@ -24,7 +24,7 @@ namespace Library
         {
             InitializeComponent();
         }
-
+        #region Knjige
         private void btnSveKnjige_Click(object sender, EventArgs e)
         {
             var connectionString = "mongodb://localhost/?safe=true";
@@ -37,14 +37,14 @@ namespace Library
 
             List<Knjiga> listaKnjiga = new List<Knjiga>();
 
-            foreach(Knjiga k in knjige.ToArray<Knjiga>())
+            foreach (Knjiga k in knjige.ToArray<Knjiga>())
             {
                 listaKnjiga.Add(k);
             }
             dataGridView1.DataSource = listaKnjiga;
             dataGridView1.Columns["Id"].Visible = false;
+            dataGridView1.Columns["Sektor"].Visible = false;
         }
-
         private void btnPisca_Click(object sender, EventArgs e)
         {
             var connectionString = "mongodb://localhost/?safe=true";
@@ -55,15 +55,16 @@ namespace Library
 
             List<Knjiga> knjige = new List<Knjiga>();
 
-            foreach(Knjiga k in collection.Find(Query.EQ("autor", txtImePisca.Text)))
+            foreach (Knjiga k in collection.Find(Query.EQ("autor", txtImePisca.Text)))
             {
                 knjige.Add(k);
             }
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = knjige;
+            dataGridView1.Columns["Id"].Visible = false;
+            dataGridView1.Columns["Sektor"].Visible = false;
         }
-
         private void btnNaslovKnjige_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtKnjiga.Text))
@@ -88,10 +89,8 @@ namespace Library
                 dataGridView1.DataSource = knjige;
                 dataGridView1.Columns["Id"].Visible = false;
                 dataGridView1.Columns["Sektor"].Visible = false;
-
             }
         }
-
         private void btnZanr_Click(object sender, EventArgs e)
         {
             var connectionString = "mongodb://localhost/?safe=true";
@@ -102,9 +101,9 @@ namespace Library
 
             List<Knjiga> knjige = new List<Knjiga>();
 
-            if(rbRoman.Checked == true)
+            if (rbRoman.Checked == true)
             {
-                foreach(Knjiga k in collection.Find(Query.EQ("zanr", "roman")))
+                foreach (Knjiga k in collection.Find(Query.EQ("zanr", "roman")))
                 {
                     knjige.Add(k);
                 }
@@ -122,7 +121,7 @@ namespace Library
                 {
                     knjige.Add(k);
                 }
-                foreach (Knjiga k in collection.Find(Query.EQ("oznake","decja knjiga")))
+                foreach (Knjiga k in collection.Find(Query.EQ("oznake", "decja knjiga")))
                 {
                     knjige.Add(k);
                 }
@@ -134,66 +133,33 @@ namespace Library
                     knjige.Add(k);
                 }
             }
-            else if(rbKlasici.Checked == true)
+            else if (rbKlasici.Checked == true)
             {
                 foreach (Knjiga k in collection.Find(Query.EQ("oznake", "klasika")))
                 {
                     knjige.Add(k);
                 }
             }
-            else if(rbPoezija.Checked == true)
+            else if (rbPoezija.Checked == true)
             {
                 foreach (Knjiga k in collection.Find(Query.EQ("oznake", "poezija")))
                 {
                     knjige.Add(k);
                 }
             }
-            else if(rbPsihologija.Checked == true)
+            else if (rbPsihologija.Checked == true)
             {
                 foreach (Knjiga k in collection.Find(Query.EQ("oznake", "psihologija")))
                 {
                     knjige.Add(k);
                 }
             }
-
-
-
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = knjige;
             dataGridView1.Columns["Id"].Visible = false;
+            dataGridView1.Columns["Sektor"].Visible = false;
         }
-
-        private void btnIzdavanje_Click(object sender, EventArgs e)
-        {
-            var connectionString = "mongodb://localhost/?safe=true";
-            var server = MongoServer.Create(connectionString);
-            var db = server.GetDatabase("Biblioteka");
-
-            var collection = db.GetCollection<Clan>("clanovi");
-
-           
-           
-
-            
-
-            MongoCursor<Clan> clanovi = collection.FindAll();
-
-            List<Clan> listaClanova = new List<Clan>();
-
-            foreach (Clan c in clanovi.ToArray<Clan>())
-            {
-                listaClanova.Add(c);
-            }
-
-            for (int i = 0; i < listaClanova.Count; i++)
-                cbClanovi.Items.Add(listaClanova[i].brojClanskeKarte); //+ ". " + listaClanova[i].ime + " " + listaClanova[i].prezime);
-        }
-
-        private void cbClanovi_Click(object sender, EventArgs e)
-        {
-           
-        }
-
+        #endregion
         private void btnIzdavanje_Click_1(object sender, EventArgs e)
         {
             if(dataGridView1.CurrentRow == null || cbClanovi.SelectedItem == null)
@@ -203,8 +169,6 @@ namespace Library
             }
             int indexRow = dataGridView1.CurrentRow.Index;
             string knjiga = (string)dataGridView1[1, indexRow].Value;
-            
-
 
             var connectionString = "mongodb://localhost/?safe=true";
             var server = MongoServer.Create(connectionString);
@@ -253,29 +217,34 @@ namespace Library
             MessageBox.Show("Izdata knjiga: " + knjiga1.naslov + "\n Datum vracanja: " + datumVracanje);
 
         }
-
+        #region zaFormu
         private void FormZaposleni_Load(object sender, EventArgs e)
         {
             Text = " " + FormZaposleniLogging.logovani.ime + " " +FormZaposleniLogging.logovani.prezime;
-
             var connectionString = "mongodb://localhost/?safe=true";
             var server = MongoServer.Create(connectionString);
             var db = server.GetDatabase("Biblioteka");
-
             var collectionSektori = db.GetCollection<Sektor>("sektori");
-
             foreach(Sektor s in collectionSektori.FindAll())
             {
                 comboBox1.Items.Add(s.oznakaSektora);
             }
-
-
+            var collection = db.GetCollection<Clan>("clanovi");
+            MongoCursor<Clan> clanovi = collection.FindAll();
+            List<Clan> listaClanova = new List<Clan>();
+            foreach (Clan c in clanovi.ToArray<Clan>())
+            {
+                listaClanova.Add(c);
+            }
+            for (int i = 0; i < listaClanova.Count; i++)
+                cbClanovi.Items.Add(listaClanova[i].brojClanskeKarte + ". " + listaClanova[i].ime + " " + listaClanova[i].prezime);
         }
-
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        #endregion
+        #region Sve-izdavanje knjige
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -293,7 +262,6 @@ namespace Library
             }
 
             List<Knjiga> knjigeLista = new List<Knjiga>();
-            
             foreach(Knjiga k in collectionKnjige.FindAll())
             {
                 for(int i = 0;i<s.knjigeUSektoru.Count;i++)
@@ -302,14 +270,10 @@ namespace Library
                         knjigeLista.Add(k);
                 }
             }
-
             dataGridView1.DataSource = knjigeLista;
             dataGridView1.Columns["Id"].Visible = false;
-            
-   
-            
+            dataGridView1.Columns["Sektor"].Visible = false;
         }
-
         private void btnUcitajZahteve_Click(object sender, EventArgs e)
         {
             var connectionString = "mongodb://localhost/?safe=true";
@@ -327,6 +291,12 @@ namespace Library
            {
                listView1.Items.Add("Knjiga: \n" + zahtevi[i].knjiga  + "\n Broj clanske karte: \n" + zahtevi[i].brojClanskeKarte + "\n");
            }
+        }
+        #endregion
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

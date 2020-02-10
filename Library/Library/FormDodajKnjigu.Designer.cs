@@ -46,6 +46,7 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtIzdavac
@@ -95,7 +96,6 @@
             this.lblZanr.Size = new System.Drawing.Size(49, 24);
             this.lblZanr.TabIndex = 22;
             this.lblZanr.Text = "Zanr";
-            this.lblZanr.Click += new System.EventHandler(this.lblIzdavac_Click);
             // 
             // lblAutor
             // 
@@ -206,14 +206,14 @@
             // 
             // btnDodaj
             // 
-            this.btnDodaj.BackColor = System.Drawing.Color.Ivory;
+            this.btnDodaj.BackColor = System.Drawing.Color.Aquamarine;
             this.btnDodaj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodaj.Location = new System.Drawing.Point(153, 432);
+            this.btnDodaj.Location = new System.Drawing.Point(94, 419);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(173, 43);
             this.btnDodaj.TabIndex = 31;
-            this.btnDodaj.Text = "Dodaj";
+            this.btnDodaj.Text = "Dodaj knjigu";
             this.btnDodaj.UseVisualStyleBackColor = false;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
@@ -232,15 +232,15 @@
             "klasici"});
             this.checkedListBox1.Location = new System.Drawing.Point(153, 257);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(161, 109);
+            this.checkedListBox1.Size = new System.Drawing.Size(173, 109);
             this.checkedListBox1.TabIndex = 37;
-            this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_ItemCheck);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(16, 257);
+            this.label1.Location = new System.Drawing.Point(16, 295);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 24);
             this.label1.TabIndex = 38;
@@ -248,18 +248,32 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(153, 390);
+            this.comboBox1.Location = new System.Drawing.Point(153, 372);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(173, 26);
             this.comboBox1.TabIndex = 39;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(22, 374);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 24);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Sektor";
             // 
             // FormDodajKnjigu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Library.Properties.Resources._2;
-            this.ClientSize = new System.Drawing.Size(478, 487);
+            this.ClientSize = new System.Drawing.Size(365, 487);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkedListBox1);
@@ -309,5 +323,6 @@
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
