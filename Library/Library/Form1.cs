@@ -32,7 +32,7 @@ namespace Library
             var database = server.GetDatabase("Biblioteka");
 
             var collection = database.GetCollection<Clan>("clanovi");
-            var coll = database.GetCollection<IzdataKnjiga>("izdateKnjige");
+            
             var knjigeColl = database.GetCollection<Knjiga>("knjige");
 
            /* Clan clan1 = new Clan();
@@ -54,11 +54,7 @@ namespace Library
 
             
 
-            foreach(IzdataKnjiga ik in coll.FindAll())
-            {
-
-            }
-
+            
 
           //  MessageBox.Show(knjiga.naslov);
 

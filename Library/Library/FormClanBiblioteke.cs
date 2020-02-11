@@ -316,7 +316,7 @@ namespace Library
             var database = server.GetDatabase("Biblioteka");
 
             var collection = database.GetCollection<Clan>("clanovi");
-            var coll = database.GetCollection<IzdataKnjiga>("izdateKnjige");
+         
             var knjigeColl = database.GetCollection<Knjiga>("knjige");
 
             Clan clan = FormClanLogIn.trClan;

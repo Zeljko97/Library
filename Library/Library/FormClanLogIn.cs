@@ -68,5 +68,11 @@ namespace Library
             txtUsername.Text = "";
             txtPassword.Text = "";
         }
+
+        private void btnSingIn_Click(object sender, EventArgs e)
+        {
+            FormClanSingIn f = new FormClanSingIn();
+            f.Show();
+        }
     }
 }

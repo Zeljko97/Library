@@ -87,7 +87,6 @@
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Entiteti\Clan.cs" />
-    <Compile Include="Entiteti\IzdataKnjiga.cs" />
     <Compile Include="Entiteti\Knjiga.cs" />
     <Compile Include="Entiteti\Sektor.cs" />
     <Compile Include="Entiteti\Zahtev.cs" />
@@ -127,6 +126,12 @@
     </Compile>
     <Compile Include="FormClanLogIn.Designer.cs">
       <DependentUpon>FormClanLogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormClanSingIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClanSingIn.Designer.cs">
+      <DependentUpon>FormClanSingIn.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDodajKnjigu.cs">
       <SubType>Form</SubType>
@@ -204,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormClanLogIn.resx">
       <DependentUpon>FormClanLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClanSingIn.resx">
+      <DependentUpon>FormClanSingIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDodajKnjigu.resx">
       <DependentUpon>FormDodajKnjigu.cs</DependentUpon>

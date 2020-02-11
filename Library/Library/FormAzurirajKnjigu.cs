@@ -80,7 +80,9 @@ namespace Library
 
                 var collection = database.GetCollection<Knjiga>("knjige");
                 //ovde treba ovo za oznake,ali to nisam mogao provaljujem
-                var query = Query.And(Query.EQ("naslov", Admin.azuriranje.naslov),Query.EQ("autor",Admin.azuriranje.autor));
+             //   var query = Query.And(Query.EQ("naslov", Admin.azuriranje.naslov),Query.EQ("autor",Admin.azuriranje.autor));
+
+                var query = Query.EQ("_id", Admin.azuriranje.Id);
 
                 ////////////////// Ovde da provalimo kako da update vise stvari.
                 var update = MongoDB.Driver.Builders.Update.Set("izdavac",txtIzdavac.Text);

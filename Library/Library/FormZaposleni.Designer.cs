@@ -65,6 +65,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnIznajmljeneKnjige = new System.Windows.Forms.Button();
+            this.btnPodaci = new System.Windows.Forms.Button();
+            this.btnVracenaKnjiga = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -280,20 +284,21 @@
             this.cbClanovi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbClanovi.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbClanovi.FormattingEnabled = true;
-            this.cbClanovi.Location = new System.Drawing.Point(314, 49);
+            this.cbClanovi.Location = new System.Drawing.Point(283, 47);
             this.cbClanovi.Name = "cbClanovi";
             this.cbClanovi.Size = new System.Drawing.Size(166, 28);
             this.cbClanovi.TabIndex = 19;
+            this.cbClanovi.SelectedIndexChanged += new System.EventHandler(this.cbClanovi_SelectedIndexChanged);
             // 
             // btnIzdavanje
             // 
             this.btnIzdavanje.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIzdavanje.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIzdavanje.Location = new System.Drawing.Point(338, 167);
+            this.btnIzdavanje.Location = new System.Drawing.Point(301, 167);
             this.btnIzdavanje.Name = "btnIzdavanje";
-            this.btnIzdavanje.Size = new System.Drawing.Size(121, 35);
+            this.btnIzdavanje.Size = new System.Drawing.Size(139, 35);
             this.btnIzdavanje.TabIndex = 20;
-            this.btnIzdavanje.Text = "Izdavanje";
+            this.btnIzdavanje.Text = "Izdaj knjigu";
             this.btnIzdavanje.UseVisualStyleBackColor = true;
             this.btnIzdavanje.Click += new System.EventHandler(this.btnIzdavanje_Click_1);
             // 
@@ -365,7 +370,7 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(314, 116);
+            this.comboBox1.Location = new System.Drawing.Point(283, 119);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(166, 31);
             this.comboBox1.TabIndex = 24;
@@ -375,7 +380,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(365, 89);
+            this.label5.Location = new System.Drawing.Point(334, 88);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 24);
             this.label5.TabIndex = 25;
@@ -442,7 +447,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(349, 25);
+            this.label6.Location = new System.Drawing.Point(322, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 24);
             this.label6.TabIndex = 30;
@@ -462,6 +467,10 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.GhostWhite;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.btnVracenaKnjiga);
+            this.panel3.Controls.Add(this.btnPodaci);
+            this.panel3.Controls.Add(this.btnIznajmljeneKnjige);
+            this.panel3.Controls.Add(this.listBox1);
             this.panel3.Controls.Add(this.listView1);
             this.panel3.Controls.Add(this.cbClanovi);
             this.panel3.Controls.Add(this.label6);
@@ -471,16 +480,57 @@
             this.panel3.Controls.Add(this.btnIzdavanje);
             this.panel3.Location = new System.Drawing.Point(451, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(506, 250);
+            this.panel3.Size = new System.Drawing.Size(613, 266);
             this.panel3.TabIndex = 32;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(465, 72);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(141, 121);
+            this.listBox1.TabIndex = 31;
+            // 
+            // btnIznajmljeneKnjige
+            // 
+            this.btnIznajmljeneKnjige.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIznajmljeneKnjige.Location = new System.Drawing.Point(465, 3);
+            this.btnIznajmljeneKnjige.Name = "btnIznajmljeneKnjige";
+            this.btnIznajmljeneKnjige.Size = new System.Drawing.Size(120, 62);
+            this.btnIznajmljeneKnjige.TabIndex = 32;
+            this.btnIznajmljeneKnjige.Text = "Ucitaj iznajmljene knjige";
+            this.btnIznajmljeneKnjige.UseVisualStyleBackColor = true;
+            this.btnIznajmljeneKnjige.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnPodaci
+            // 
+            this.btnPodaci.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPodaci.Location = new System.Drawing.Point(465, 200);
+            this.btnPodaci.Name = "btnPodaci";
+            this.btnPodaci.Size = new System.Drawing.Size(120, 56);
+            this.btnPodaci.TabIndex = 33;
+            this.btnPodaci.Text = "Ucitaj podatke o clanu";
+            this.btnPodaci.UseVisualStyleBackColor = true;
+            this.btnPodaci.Click += new System.EventHandler(this.btnPodaci_Click);
+            // 
+            // btnVracenaKnjiga
+            // 
+            this.btnVracenaKnjiga.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnVracenaKnjiga.Location = new System.Drawing.Point(301, 220);
+            this.btnVracenaKnjiga.Name = "btnVracenaKnjiga";
+            this.btnVracenaKnjiga.Size = new System.Drawing.Size(139, 36);
+            this.btnVracenaKnjiga.TabIndex = 34;
+            this.btnVracenaKnjiga.Text = "Vratiti knjigu";
+            this.btnVracenaKnjiga.UseVisualStyleBackColor = true;
+            this.btnVracenaKnjiga.Click += new System.EventHandler(this.btnVracenaKnjiga_Click);
             // 
             // FormZaposleni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(969, 486);
+            this.ClientSize = new System.Drawing.Size(1076, 486);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel2);
@@ -542,5 +592,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnIznajmljeneKnjige;
+        private System.Windows.Forms.Button btnPodaci;
+        private System.Windows.Forms.Button btnVracenaKnjiga;
     }
 }

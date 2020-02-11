@@ -542,6 +542,7 @@ namespace Library
             else
             {
                 int Broj = Convert.ToInt32(dataGridView3[1, index].Value);
+                ObjectId id = ObjectId.Parse(dataGridView3[0, index].Value.ToString());
                 //zbog stampanja samo
                 string ime = (string)dataGridView3[2, index].Value;
                 string prezime = (string)dataGridView3[3, index].Value;
@@ -551,9 +552,15 @@ namespace Library
                 var database = server.GetDatabase("Biblioteka");
                 var collection = database.GetCollection<Clan>("clanovi");
 
-                //Dal bi moglo da se izvude ObjectID? mozda bi bilo efikasnije 
-                var query = Query.EQ("brojClanskeKarte", Broj);
+              
+
+              
+
+             
+                var query = Query.EQ("_id", id);
+
                 collection.Remove(query);
+                
                 MessageBox.Show("Clan " + ime + " " + prezime + " je uspesno obrisan..", "Uspesno brisanje clana biblioteke", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnSingIn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -142,6 +143,17 @@
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // btnSingIn
+            // 
+            this.btnSingIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSingIn.Location = new System.Drawing.Point(564, 285);
+            this.btnSingIn.Name = "btnSingIn";
+            this.btnSingIn.Size = new System.Drawing.Size(210, 24);
+            this.btnSingIn.TabIndex = 19;
+            this.btnSingIn.Text = "Sing In";
+            this.btnSingIn.UseVisualStyleBackColor = true;
+            this.btnSingIn.Click += new System.EventHandler(this.btnSingIn_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::Library.Properties.Resources.user_settings_icon;
@@ -160,6 +172,7 @@
             this.BackColor = System.Drawing.Color.LightCyan;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(805, 424);
+            this.Controls.Add(this.btnSingIn);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBack);
@@ -195,5 +208,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnSingIn;
     }
 }

@@ -174,9 +174,12 @@ namespace Library
             var server = MongoServer.Create(connectionString);
             var db = server.GetDatabase("Biblioteka");
 
-            var collectionIzdateKnjige = db.GetCollection<IzdataKnjiga>("izdateKnjige");
+            
             var collectionClanovi = db.GetCollection<Clan>("clanovi");
             var collectionKnjige = db.GetCollection<Knjiga>("knjige");
+
+          
+
 
            Clan clan1 =new Clan();
             foreach(Clan c in collectionClanovi.Find(Query.EQ("brojClanskeKarte", cbClanovi.SelectedItem.ToString())))
@@ -190,6 +193,14 @@ namespace Library
             }
             //////////////////
 
+            if(knjiga1.brojPrimeraka < 1)
+            {
+                MessageBox.Show("Trenutno nema primeraka knjige u biblioteci.");
+                return;
+            }
+
+            knjiga1.brojPrimeraka -= 1;
+
             clan1.iznajmljeneKnjige.Add(new MongoDBRef("iznajmljeneKnjige", knjiga1.Id));
             knjiga1.IzdataClanovima.Add(new MongoDBRef("izdataClanovima", clan1.Id));
 
@@ -201,18 +212,6 @@ namespace Library
             string datumVracanje = DateTime.Now.AddDays(30).ToString();
 
             
-       /*     IzdataKnjiga izdataKnjiga = new IzdataKnjiga { knjiga = (string)dataGridView1[1, indexRow].Value, datumIzdavanja = datum, datumVracanja = datumVracanje};
-            collectionIzdateKnjige.Insert(izdataKnjiga);
-
-            
-
-                izdataKnjiga.Clan = new MongoDBRef("clanovi", clan1.brojClanskeKarte);
-                clan1.iznajmljeneKnjige.Add(new MongoDBRef("knjiga", knjiga1.naslov));
-                
-                 
-            collectionIzdateKnjige.Save(izdataKnjiga);
-            collectionClanovi.Save(clan1);*/
-           // MessageBox.Show("Izdata knjiga: " + izdataKnjiga.knjiga + "\n Datum vracanja: " + datumVracanje);
 
             MessageBox.Show("Izdata knjiga: " + knjiga1.naslov + "\n Datum vracanja: " + datumVracanje);
 
@@ -237,7 +236,7 @@ namespace Library
                 listaClanova.Add(c);
             }
             for (int i = 0; i < listaClanova.Count; i++)
-                cbClanovi.Items.Add(listaClanova[i].brojClanskeKarte + ". " + listaClanova[i].ime + " " + listaClanova[i].prezime);
+                cbClanovi.Items.Add(listaClanova[i].brojClanskeKarte); //+ ". " + listaClanova[i].ime + " " + listaClanova[i].prezime);
         }
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -248,6 +247,9 @@ namespace Library
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            
+
             var connectionString = "mongodb://localhost/?safe=true";
             var server = MongoServer.Create(connectionString);
             var db = server.GetDatabase("Biblioteka");
@@ -297,6 +299,117 @@ namespace Library
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var connectionString = "mongodb://localhost/?safe=true";
+            var server = MongoServer.Create(connectionString);
+            var database = server.GetDatabase("Biblioteka");
+
+            var collection = database.GetCollection<Clan>("clanovi");
+   
+            var knjigeColl = database.GetCollection<Knjiga>("knjige");
+
+            Clan clan = new Clan();
+            foreach (Clan c in collection.Find(Query.EQ("brojClanskeKarte", cbClanovi.SelectedItem.ToString())))
+            {
+                clan = c;
+            }
+
+            
+            foreach (Knjiga k in knjigeColl.FindAll())
+            {
+                for (int i = 0; i < clan.iznajmljeneKnjige.Count; i++)
+                {
+                    if (k.Id == clan.iznajmljeneKnjige[i].Id)
+                        listBox1.Items.Add(k.naslov);
+                }
+            }
+
+
+        }
+
+        private void cbClanovi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+        }
+
+        private void btnPodaci_Click(object sender, EventArgs e)
+        {
+            var connectionString = "mongodb://localhost/?safe=true";
+            var server = MongoServer.Create(connectionString);
+            var database = server.GetDatabase("Biblioteka");
+
+            var clanoviCollection = database.GetCollection<Clan>("clanovi");
+
+            listBox1.Items.Clear();
+
+            if(cbClanovi.Text == null)
+            {
+                MessageBox.Show("Izaberite clana, na osnovu broja clanske karte.");
+            }
+
+            Clan clan = new Clan();
+            foreach (Clan c in clanoviCollection.Find(Query.EQ("brojClanskeKarte", cbClanovi.SelectedItem.ToString())))
+            {
+                clan = c;
+            }
+
+
+            listBox1.Items.Add("Ime: " + clan.ime);
+            listBox1.Items.Add("Prezime: " + clan.prezime);
+            listBox1.Items.Add("Zanimanje: " + clan.zanimanje);
+            listBox1.Items.Add("Broj licne karte: " + clan.brojLicneKarte);
+            listBox1.Items.Add("Broj telefona: " + clan.brojTelefona);
+        }
+
+        private void btnVracenaKnjiga_Click(object sender, EventArgs e)
+        {
+            var connectionString = "mongodb://localhost/?safe=true";
+            var server = MongoServer.Create(connectionString);
+            var database = server.GetDatabase("Biblioteka");
+
+            var clanoviCollection = database.GetCollection<Clan>("clanovi");
+            var knjigeColl = database.GetCollection<Knjiga>("knjige");
+
+            int indexRow = dataGridView1.CurrentRow.Index;
+
+            Clan clan = new Clan();
+            foreach (Clan c in clanoviCollection.Find(Query.EQ("brojClanskeKarte", cbClanovi.SelectedItem.ToString())))
+            {
+                clan = c;
+            }
+
+            Knjiga knjiga = new Knjiga();
+            foreach (Knjiga k in knjigeColl.Find(Query.EQ("naslov", (string)dataGridView1[1, indexRow].Value)))
+            {
+                knjiga = k;
+            }
+
+            foreach(MongoDBRef knjigaRef in clan.iznajmljeneKnjige.ToList())
+   
+            {
+                if (knjigaRef.Id == knjiga.Id)
+             
+                {
+                    var query = Query.EQ("DBRef(iznajmljeneKnjige",ObjectId.Parse(knjigaRef.Id.ToString()));
+                    
+                    clanoviCollection.Remove(query);
+
+                   
+
+
+
+                    
+                   // clanoviCollection.Save(clan);
+                    knjiga.brojPrimeraka++;
+                }
+            }
+
+          
+            knjigeColl.Save(knjiga);
+            MessageBox.Show("Knjiga " + knjiga.naslov + " je vracena.");
         }
     }
 }

@@ -39,7 +39,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(431, 164);
+            this.button1.Location = new System.Drawing.Point(762, 225);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 41);
             this.button1.TabIndex = 0;
@@ -51,9 +51,9 @@
             // 
             this.button2.BackColor = System.Drawing.Color.AntiqueWhite;
             this.button2.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(431, 64);
+            this.button2.Location = new System.Drawing.Point(745, 80);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 36);
+            this.button2.Size = new System.Drawing.Size(101, 51);
             this.button2.TabIndex = 1;
             this.button2.Text = "Zaposlen";
             this.button2.UseVisualStyleBackColor = false;
@@ -63,7 +63,7 @@
             // 
             this.btnAdmin.BackColor = System.Drawing.Color.AntiqueWhite;
             this.btnAdmin.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.Location = new System.Drawing.Point(431, 12);
+            this.btnAdmin.Location = new System.Drawing.Point(745, 12);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(101, 46);
             this.btnAdmin.TabIndex = 2;
@@ -83,9 +83,10 @@
             // 
             // btnKnjige
             // 
-            this.btnKnjige.Location = new System.Drawing.Point(12, 20);
+            this.btnKnjige.Font = new System.Drawing.Font("Kristen ITC", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKnjige.Location = new System.Drawing.Point(12, 12);
             this.btnKnjige.Name = "btnKnjige";
-            this.btnKnjige.Size = new System.Drawing.Size(123, 38);
+            this.btnKnjige.Size = new System.Drawing.Size(219, 49);
             this.btnKnjige.TabIndex = 5;
             this.btnKnjige.Text = "Pregledaj knjige";
             this.btnKnjige.UseVisualStyleBackColor = true;
@@ -95,9 +96,9 @@
             // 
             this.button3.BackColor = System.Drawing.Color.AntiqueWhite;
             this.button3.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(431, 106);
+            this.button3.Location = new System.Drawing.Point(12, 106);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 52);
+            this.button3.Size = new System.Drawing.Size(219, 75);
             this.button3.TabIndex = 6;
             this.button3.Text = "Clan Biblioteke";
             this.button3.UseVisualStyleBackColor = false;
@@ -109,7 +110,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Library.Properties.Resources.Library;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(565, 355);
+            this.ClientSize = new System.Drawing.Size(899, 355);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnKnjige);
             this.Controls.Add(this.btnOpis);
