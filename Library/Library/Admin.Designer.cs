@@ -28,11 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtBrojPrimeraka = new System.Windows.Forms.TextBox();
+            this.btnDodajSliku = new System.Windows.Forms.Button();
+            this.btnDodajPrimerak = new System.Windows.Forms.Button();
+            this.btnImeAutora = new System.Windows.Forms.Button();
+            this.btnNaslovKnjige = new System.Windows.Forms.Button();
+            this.txtImePisca = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtKnjiga = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.rbPoezija = new System.Windows.Forms.RadioButton();
+            this.rbKlasici = new System.Windows.Forms.RadioButton();
+            this.rbDecjeKnjige = new System.Windows.Forms.RadioButton();
+            this.rbPsihologija = new System.Windows.Forms.RadioButton();
+            this.btnZanr = new System.Windows.Forms.Button();
+            this.rbDomaciAutori = new System.Windows.Forms.RadioButton();
+            this.rbPublicistika = new System.Windows.Forms.RadioButton();
+            this.rbBeletristika = new System.Windows.Forms.RadioButton();
+            this.rbRoman = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnSortPoBrojuPrimeraka = new System.Windows.Forms.Button();
+            this.btnKnjigePoNaslovu = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnSektor = new System.Windows.Forms.Button();
             this.btnSortBrojStranica = new System.Windows.Forms.Button();
@@ -64,38 +88,15 @@
             this.btnAzurirajClana = new System.Windows.Forms.Button();
             this.btnObrisiClana = new System.Windows.Forms.Button();
             this.btnDodajClana = new System.Windows.Forms.Button();
-            this.btnKnjigePoNaslovu = new System.Windows.Forms.Button();
-            this.btnSortPoBrojuPrimeraka = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.rbPoezija = new System.Windows.Forms.RadioButton();
-            this.rbKlasici = new System.Windows.Forms.RadioButton();
-            this.rbDecjeKnjige = new System.Windows.Forms.RadioButton();
-            this.rbPsihologija = new System.Windows.Forms.RadioButton();
-            this.btnZanr = new System.Windows.Forms.Button();
-            this.rbDomaciAutori = new System.Windows.Forms.RadioButton();
-            this.rbPublicistika = new System.Windows.Forms.RadioButton();
-            this.rbBeletristika = new System.Windows.Forms.RadioButton();
-            this.rbRoman = new System.Windows.Forms.RadioButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtKnjiga = new System.Windows.Forms.TextBox();
-            this.txtImePisca = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnNaslovKnjige = new System.Windows.Forms.Button();
-            this.btnImeAutora = new System.Windows.Forms.Button();
-            this.btnDodajPrimerak = new System.Windows.Forms.Button();
-            this.btnDodajSliku = new System.Windows.Forms.Button();
-            this.txtBrojPrimeraka = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbKnjiga)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -112,14 +113,14 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowCellToolTips = false;
@@ -131,6 +132,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Ivory;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.txtBrojPrimeraka);
             this.panel1.Controls.Add(this.btnDodajSliku);
             this.panel1.Controls.Add(this.btnDodajPrimerak);
@@ -164,6 +166,285 @@
             this.panel1.Size = new System.Drawing.Size(1058, 388);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // txtBrojPrimeraka
+            // 
+            this.txtBrojPrimeraka.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrojPrimeraka.Location = new System.Drawing.Point(930, 48);
+            this.txtBrojPrimeraka.MaxLength = 2;
+            this.txtBrojPrimeraka.Name = "txtBrojPrimeraka";
+            this.txtBrojPrimeraka.Size = new System.Drawing.Size(46, 22);
+            this.txtBrojPrimeraka.TabIndex = 34;
+            // 
+            // btnDodajSliku
+            // 
+            this.btnDodajSliku.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDodajSliku.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDodajSliku.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodajSliku.Location = new System.Drawing.Point(344, 158);
+            this.btnDodajSliku.Name = "btnDodajSliku";
+            this.btnDodajSliku.Size = new System.Drawing.Size(101, 32);
+            this.btnDodajSliku.TabIndex = 33;
+            this.btnDodajSliku.Text = "Dodaj sliku";
+            this.btnDodajSliku.UseVisualStyleBackColor = false;
+            // 
+            // btnDodajPrimerak
+            // 
+            this.btnDodajPrimerak.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodajPrimerak.Location = new System.Drawing.Point(930, 76);
+            this.btnDodajPrimerak.Name = "btnDodajPrimerak";
+            this.btnDodajPrimerak.Size = new System.Drawing.Size(121, 34);
+            this.btnDodajPrimerak.TabIndex = 32;
+            this.btnDodajPrimerak.Text = "Dodaj broj primeraka";
+            this.btnDodajPrimerak.UseVisualStyleBackColor = true;
+            this.btnDodajPrimerak.Click += new System.EventHandler(this.btnDodajPrimerak_Click);
+            // 
+            // btnImeAutora
+            // 
+            this.btnImeAutora.BackColor = System.Drawing.Color.Bisque;
+            this.btnImeAutora.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImeAutora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImeAutora.Location = new System.Drawing.Point(588, 301);
+            this.btnImeAutora.Name = "btnImeAutora";
+            this.btnImeAutora.Size = new System.Drawing.Size(97, 28);
+            this.btnImeAutora.TabIndex = 31;
+            this.btnImeAutora.Text = "Pronadji";
+            this.btnImeAutora.UseVisualStyleBackColor = false;
+            this.btnImeAutora.Click += new System.EventHandler(this.btnImeAutora_Click);
+            // 
+            // btnNaslovKnjige
+            // 
+            this.btnNaslovKnjige.BackColor = System.Drawing.Color.Bisque;
+            this.btnNaslovKnjige.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNaslovKnjige.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNaslovKnjige.Location = new System.Drawing.Point(588, 255);
+            this.btnNaslovKnjige.Name = "btnNaslovKnjige";
+            this.btnNaslovKnjige.Size = new System.Drawing.Size(97, 28);
+            this.btnNaslovKnjige.TabIndex = 30;
+            this.btnNaslovKnjige.Text = "Pronadji";
+            this.btnNaslovKnjige.UseVisualStyleBackColor = false;
+            this.btnNaslovKnjige.Click += new System.EventHandler(this.btnNaslovKnjige_Click);
+            // 
+            // txtImePisca
+            // 
+            this.txtImePisca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtImePisca.Location = new System.Drawing.Point(470, 305);
+            this.txtImePisca.Name = "txtImePisca";
+            this.txtImePisca.Size = new System.Drawing.Size(100, 21);
+            this.txtImePisca.TabIndex = 28;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(467, 289);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(73, 15);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "Ime pisca:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(467, 243);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(97, 15);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Naslov knjige:";
+            // 
+            // txtKnjiga
+            // 
+            this.txtKnjiga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKnjiga.Location = new System.Drawing.Point(470, 259);
+            this.txtKnjiga.Name = "txtKnjiga";
+            this.txtKnjiga.Size = new System.Drawing.Size(100, 21);
+            this.txtKnjiga.TabIndex = 27;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(719, 359);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 17);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "label8";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Controls.Add(this.rbPoezija);
+            this.panel4.Controls.Add(this.rbKlasici);
+            this.panel4.Controls.Add(this.rbDecjeKnjige);
+            this.panel4.Controls.Add(this.rbPsihologija);
+            this.panel4.Controls.Add(this.btnZanr);
+            this.panel4.Controls.Add(this.rbDomaciAutori);
+            this.panel4.Controls.Add(this.rbPublicistika);
+            this.panel4.Controls.Add(this.rbBeletristika);
+            this.panel4.Controls.Add(this.rbRoman);
+            this.panel4.Location = new System.Drawing.Point(467, 46);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(232, 181);
+            this.panel4.TabIndex = 24;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(-2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 13);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "Po Zanru:";
+            // 
+            // rbPoezija
+            // 
+            this.rbPoezija.AutoSize = true;
+            this.rbPoezija.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPoezija.Location = new System.Drawing.Point(4, 160);
+            this.rbPoezija.Name = "rbPoezija";
+            this.rbPoezija.Size = new System.Drawing.Size(66, 17);
+            this.rbPoezija.TabIndex = 25;
+            this.rbPoezija.TabStop = true;
+            this.rbPoezija.Text = "Poezija";
+            this.rbPoezija.UseVisualStyleBackColor = true;
+            // 
+            // rbKlasici
+            // 
+            this.rbKlasici.AutoSize = true;
+            this.rbKlasici.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbKlasici.Location = new System.Drawing.Point(3, 139);
+            this.rbKlasici.Name = "rbKlasici";
+            this.rbKlasici.Size = new System.Drawing.Size(62, 17);
+            this.rbKlasici.TabIndex = 24;
+            this.rbKlasici.TabStop = true;
+            this.rbKlasici.Text = "Klasici";
+            this.rbKlasici.UseVisualStyleBackColor = true;
+            // 
+            // rbDecjeKnjige
+            // 
+            this.rbDecjeKnjige.AutoSize = true;
+            this.rbDecjeKnjige.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDecjeKnjige.Location = new System.Drawing.Point(3, 118);
+            this.rbDecjeKnjige.Name = "rbDecjeKnjige";
+            this.rbDecjeKnjige.Size = new System.Drawing.Size(96, 17);
+            this.rbDecjeKnjige.TabIndex = 23;
+            this.rbDecjeKnjige.TabStop = true;
+            this.rbDecjeKnjige.Text = "Decje knjige";
+            this.rbDecjeKnjige.UseVisualStyleBackColor = true;
+            // 
+            // rbPsihologija
+            // 
+            this.rbPsihologija.AutoSize = true;
+            this.rbPsihologija.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPsihologija.Location = new System.Drawing.Point(3, 97);
+            this.rbPsihologija.Name = "rbPsihologija";
+            this.rbPsihologija.Size = new System.Drawing.Size(86, 17);
+            this.rbPsihologija.TabIndex = 22;
+            this.rbPsihologija.TabStop = true;
+            this.rbPsihologija.Text = "Psihologija";
+            this.rbPsihologija.UseVisualStyleBackColor = true;
+            // 
+            // btnZanr
+            // 
+            this.btnZanr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnZanr.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnZanr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnZanr.Location = new System.Drawing.Point(119, 124);
+            this.btnZanr.Name = "btnZanr";
+            this.btnZanr.Size = new System.Drawing.Size(97, 45);
+            this.btnZanr.TabIndex = 21;
+            this.btnZanr.Text = "Pronadji knjigu";
+            this.btnZanr.UseVisualStyleBackColor = true;
+            this.btnZanr.Click += new System.EventHandler(this.btnZanr_Click);
+            // 
+            // rbDomaciAutori
+            // 
+            this.rbDomaciAutori.AutoSize = true;
+            this.rbDomaciAutori.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDomaciAutori.Location = new System.Drawing.Point(3, 76);
+            this.rbDomaciAutori.Name = "rbDomaciAutori";
+            this.rbDomaciAutori.Size = new System.Drawing.Size(103, 17);
+            this.rbDomaciAutori.TabIndex = 20;
+            this.rbDomaciAutori.TabStop = true;
+            this.rbDomaciAutori.Text = "Domaci autori";
+            this.rbDomaciAutori.UseVisualStyleBackColor = true;
+            // 
+            // rbPublicistika
+            // 
+            this.rbPublicistika.AutoSize = true;
+            this.rbPublicistika.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPublicistika.Location = new System.Drawing.Point(3, 55);
+            this.rbPublicistika.Name = "rbPublicistika";
+            this.rbPublicistika.Size = new System.Drawing.Size(90, 17);
+            this.rbPublicistika.TabIndex = 19;
+            this.rbPublicistika.TabStop = true;
+            this.rbPublicistika.Text = "Publicistika";
+            this.rbPublicistika.UseVisualStyleBackColor = true;
+            // 
+            // rbBeletristika
+            // 
+            this.rbBeletristika.AutoSize = true;
+            this.rbBeletristika.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbBeletristika.Location = new System.Drawing.Point(3, 36);
+            this.rbBeletristika.Name = "rbBeletristika";
+            this.rbBeletristika.Size = new System.Drawing.Size(88, 17);
+            this.rbBeletristika.TabIndex = 18;
+            this.rbBeletristika.TabStop = true;
+            this.rbBeletristika.Text = "Beletristika";
+            this.rbBeletristika.UseVisualStyleBackColor = true;
+            // 
+            // rbRoman
+            // 
+            this.rbRoman.AutoSize = true;
+            this.rbRoman.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbRoman.Location = new System.Drawing.Point(2, 15);
+            this.rbRoman.Name = "rbRoman";
+            this.rbRoman.Size = new System.Drawing.Size(67, 17);
+            this.rbRoman.TabIndex = 17;
+            this.rbRoman.TabStop = true;
+            this.rbRoman.Text = "Romani";
+            this.rbRoman.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(344, 230);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 15);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Sortirati:";
+            // 
+            // btnSortPoBrojuPrimeraka
+            // 
+            this.btnSortPoBrojuPrimeraka.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSortPoBrojuPrimeraka.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSortPoBrojuPrimeraka.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSortPoBrojuPrimeraka.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortPoBrojuPrimeraka.Location = new System.Drawing.Point(344, 248);
+            this.btnSortPoBrojuPrimeraka.Name = "btnSortPoBrojuPrimeraka";
+            this.btnSortPoBrojuPrimeraka.Size = new System.Drawing.Size(101, 43);
+            this.btnSortPoBrojuPrimeraka.TabIndex = 14;
+            this.btnSortPoBrojuPrimeraka.Text = "Po broju primeraka";
+            this.btnSortPoBrojuPrimeraka.UseVisualStyleBackColor = false;
+            this.btnSortPoBrojuPrimeraka.Click += new System.EventHandler(this.btnSortPoBrojuPrimeraka_Click);
+            // 
+            // btnKnjigePoNaslovu
+            // 
+            this.btnKnjigePoNaslovu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnKnjigePoNaslovu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnKnjigePoNaslovu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKnjigePoNaslovu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKnjigePoNaslovu.Location = new System.Drawing.Point(344, 344);
+            this.btnKnjigePoNaslovu.Name = "btnKnjigePoNaslovu";
+            this.btnKnjigePoNaslovu.Size = new System.Drawing.Size(101, 32);
+            this.btnKnjigePoNaslovu.TabIndex = 13;
+            this.btnKnjigePoNaslovu.Text = "Po naslovu";
+            this.btnKnjigePoNaslovu.UseVisualStyleBackColor = false;
+            this.btnKnjigePoNaslovu.Click += new System.EventHandler(this.btnKnjigePoNaslovu_Click);
             // 
             // comboBox1
             // 
@@ -447,14 +728,14 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.ShowCellToolTips = false;
@@ -508,14 +789,14 @@
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView3.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView3.ShowCellToolTips = false;
@@ -554,284 +835,16 @@
             this.btnDodajClana.UseVisualStyleBackColor = true;
             this.btnDodajClana.Click += new System.EventHandler(this.btnDodajClana_Click);
             // 
-            // btnKnjigePoNaslovu
+            // label11
             // 
-            this.btnKnjigePoNaslovu.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnKnjigePoNaslovu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnKnjigePoNaslovu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKnjigePoNaslovu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKnjigePoNaslovu.Location = new System.Drawing.Point(344, 344);
-            this.btnKnjigePoNaslovu.Name = "btnKnjigePoNaslovu";
-            this.btnKnjigePoNaslovu.Size = new System.Drawing.Size(101, 32);
-            this.btnKnjigePoNaslovu.TabIndex = 13;
-            this.btnKnjigePoNaslovu.Text = "Po naslovu";
-            this.btnKnjigePoNaslovu.UseVisualStyleBackColor = false;
-            this.btnKnjigePoNaslovu.Click += new System.EventHandler(this.btnKnjigePoNaslovu_Click);
-            // 
-            // btnSortPoBrojuPrimeraka
-            // 
-            this.btnSortPoBrojuPrimeraka.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSortPoBrojuPrimeraka.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSortPoBrojuPrimeraka.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSortPoBrojuPrimeraka.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSortPoBrojuPrimeraka.Location = new System.Drawing.Point(344, 248);
-            this.btnSortPoBrojuPrimeraka.Name = "btnSortPoBrojuPrimeraka";
-            this.btnSortPoBrojuPrimeraka.Size = new System.Drawing.Size(101, 43);
-            this.btnSortPoBrojuPrimeraka.TabIndex = 14;
-            this.btnSortPoBrojuPrimeraka.Text = "Po broju primeraka";
-            this.btnSortPoBrojuPrimeraka.UseVisualStyleBackColor = false;
-            this.btnSortPoBrojuPrimeraka.Click += new System.EventHandler(this.btnSortPoBrojuPrimeraka_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(344, 230);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 15);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Sortirati:";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.Controls.Add(this.rbPoezija);
-            this.panel4.Controls.Add(this.rbKlasici);
-            this.panel4.Controls.Add(this.rbDecjeKnjige);
-            this.panel4.Controls.Add(this.rbPsihologija);
-            this.panel4.Controls.Add(this.btnZanr);
-            this.panel4.Controls.Add(this.rbDomaciAutori);
-            this.panel4.Controls.Add(this.rbPublicistika);
-            this.panel4.Controls.Add(this.rbBeletristika);
-            this.panel4.Controls.Add(this.rbRoman);
-            this.panel4.Location = new System.Drawing.Point(467, 46);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(232, 181);
-            this.panel4.TabIndex = 24;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(-2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 13);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "Po Zanru:";
-            // 
-            // rbPoezija
-            // 
-            this.rbPoezija.AutoSize = true;
-            this.rbPoezija.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPoezija.Location = new System.Drawing.Point(4, 160);
-            this.rbPoezija.Name = "rbPoezija";
-            this.rbPoezija.Size = new System.Drawing.Size(66, 17);
-            this.rbPoezija.TabIndex = 25;
-            this.rbPoezija.TabStop = true;
-            this.rbPoezija.Text = "Poezija";
-            this.rbPoezija.UseVisualStyleBackColor = true;
-            // 
-            // rbKlasici
-            // 
-            this.rbKlasici.AutoSize = true;
-            this.rbKlasici.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbKlasici.Location = new System.Drawing.Point(3, 139);
-            this.rbKlasici.Name = "rbKlasici";
-            this.rbKlasici.Size = new System.Drawing.Size(62, 17);
-            this.rbKlasici.TabIndex = 24;
-            this.rbKlasici.TabStop = true;
-            this.rbKlasici.Text = "Klasici";
-            this.rbKlasici.UseVisualStyleBackColor = true;
-            // 
-            // rbDecjeKnjige
-            // 
-            this.rbDecjeKnjige.AutoSize = true;
-            this.rbDecjeKnjige.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDecjeKnjige.Location = new System.Drawing.Point(3, 118);
-            this.rbDecjeKnjige.Name = "rbDecjeKnjige";
-            this.rbDecjeKnjige.Size = new System.Drawing.Size(96, 17);
-            this.rbDecjeKnjige.TabIndex = 23;
-            this.rbDecjeKnjige.TabStop = true;
-            this.rbDecjeKnjige.Text = "Decje knjige";
-            this.rbDecjeKnjige.UseVisualStyleBackColor = true;
-            // 
-            // rbPsihologija
-            // 
-            this.rbPsihologija.AutoSize = true;
-            this.rbPsihologija.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPsihologija.Location = new System.Drawing.Point(3, 97);
-            this.rbPsihologija.Name = "rbPsihologija";
-            this.rbPsihologija.Size = new System.Drawing.Size(86, 17);
-            this.rbPsihologija.TabIndex = 22;
-            this.rbPsihologija.TabStop = true;
-            this.rbPsihologija.Text = "Psihologija";
-            this.rbPsihologija.UseVisualStyleBackColor = true;
-            // 
-            // btnZanr
-            // 
-            this.btnZanr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnZanr.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnZanr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnZanr.Location = new System.Drawing.Point(119, 124);
-            this.btnZanr.Name = "btnZanr";
-            this.btnZanr.Size = new System.Drawing.Size(97, 45);
-            this.btnZanr.TabIndex = 21;
-            this.btnZanr.Text = "Pronadji knjigu";
-            this.btnZanr.UseVisualStyleBackColor = true;
-            this.btnZanr.Click += new System.EventHandler(this.btnZanr_Click);
-            // 
-            // rbDomaciAutori
-            // 
-            this.rbDomaciAutori.AutoSize = true;
-            this.rbDomaciAutori.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDomaciAutori.Location = new System.Drawing.Point(3, 76);
-            this.rbDomaciAutori.Name = "rbDomaciAutori";
-            this.rbDomaciAutori.Size = new System.Drawing.Size(103, 17);
-            this.rbDomaciAutori.TabIndex = 20;
-            this.rbDomaciAutori.TabStop = true;
-            this.rbDomaciAutori.Text = "Domaci autori";
-            this.rbDomaciAutori.UseVisualStyleBackColor = true;
-            // 
-            // rbPublicistika
-            // 
-            this.rbPublicistika.AutoSize = true;
-            this.rbPublicistika.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPublicistika.Location = new System.Drawing.Point(3, 55);
-            this.rbPublicistika.Name = "rbPublicistika";
-            this.rbPublicistika.Size = new System.Drawing.Size(90, 17);
-            this.rbPublicistika.TabIndex = 19;
-            this.rbPublicistika.TabStop = true;
-            this.rbPublicistika.Text = "Publicistika";
-            this.rbPublicistika.UseVisualStyleBackColor = true;
-            // 
-            // rbBeletristika
-            // 
-            this.rbBeletristika.AutoSize = true;
-            this.rbBeletristika.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbBeletristika.Location = new System.Drawing.Point(3, 36);
-            this.rbBeletristika.Name = "rbBeletristika";
-            this.rbBeletristika.Size = new System.Drawing.Size(88, 17);
-            this.rbBeletristika.TabIndex = 18;
-            this.rbBeletristika.TabStop = true;
-            this.rbBeletristika.Text = "Beletristika";
-            this.rbBeletristika.UseVisualStyleBackColor = true;
-            // 
-            // rbRoman
-            // 
-            this.rbRoman.AutoSize = true;
-            this.rbRoman.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbRoman.Location = new System.Drawing.Point(2, 15);
-            this.rbRoman.Name = "rbRoman";
-            this.rbRoman.Size = new System.Drawing.Size(67, 17);
-            this.rbRoman.TabIndex = 17;
-            this.rbRoman.TabStop = true;
-            this.rbRoman.Text = "Romani";
-            this.rbRoman.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(719, 359);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 17);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "label8";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(467, 243);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 15);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Naslov knjige:";
-            // 
-            // txtKnjiga
-            // 
-            this.txtKnjiga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKnjiga.Location = new System.Drawing.Point(470, 259);
-            this.txtKnjiga.Name = "txtKnjiga";
-            this.txtKnjiga.Size = new System.Drawing.Size(100, 21);
-            this.txtKnjiga.TabIndex = 27;
-            // 
-            // txtImePisca
-            // 
-            this.txtImePisca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImePisca.Location = new System.Drawing.Point(470, 305);
-            this.txtImePisca.Name = "txtImePisca";
-            this.txtImePisca.Size = new System.Drawing.Size(100, 21);
-            this.txtImePisca.TabIndex = 28;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(467, 289);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 15);
-            this.label10.TabIndex = 29;
-            this.label10.Text = "Ime pisca:";
-            // 
-            // btnNaslovKnjige
-            // 
-            this.btnNaslovKnjige.BackColor = System.Drawing.Color.Bisque;
-            this.btnNaslovKnjige.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNaslovKnjige.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNaslovKnjige.Location = new System.Drawing.Point(588, 255);
-            this.btnNaslovKnjige.Name = "btnNaslovKnjige";
-            this.btnNaslovKnjige.Size = new System.Drawing.Size(97, 28);
-            this.btnNaslovKnjige.TabIndex = 30;
-            this.btnNaslovKnjige.Text = "Pronadji";
-            this.btnNaslovKnjige.UseVisualStyleBackColor = false;
-            this.btnNaslovKnjige.Click += new System.EventHandler(this.btnNaslovKnjige_Click);
-            // 
-            // btnImeAutora
-            // 
-            this.btnImeAutora.BackColor = System.Drawing.Color.Bisque;
-            this.btnImeAutora.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImeAutora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImeAutora.Location = new System.Drawing.Point(588, 301);
-            this.btnImeAutora.Name = "btnImeAutora";
-            this.btnImeAutora.Size = new System.Drawing.Size(97, 28);
-            this.btnImeAutora.TabIndex = 31;
-            this.btnImeAutora.Text = "Pronadji";
-            this.btnImeAutora.UseVisualStyleBackColor = false;
-            this.btnImeAutora.Click += new System.EventHandler(this.btnImeAutora_Click);
-            // 
-            // btnDodajPrimerak
-            // 
-            this.btnDodajPrimerak.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodajPrimerak.Location = new System.Drawing.Point(930, 76);
-            this.btnDodajPrimerak.Name = "btnDodajPrimerak";
-            this.btnDodajPrimerak.Size = new System.Drawing.Size(121, 34);
-            this.btnDodajPrimerak.TabIndex = 32;
-            this.btnDodajPrimerak.Text = "Dodaj broj primeraka";
-            this.btnDodajPrimerak.UseVisualStyleBackColor = true;
-            this.btnDodajPrimerak.Click += new System.EventHandler(this.btnDodajPrimerak_Click);
-            // 
-            // btnDodajSliku
-            // 
-            this.btnDodajSliku.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDodajSliku.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDodajSliku.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodajSliku.Location = new System.Drawing.Point(344, 158);
-            this.btnDodajSliku.Name = "btnDodajSliku";
-            this.btnDodajSliku.Size = new System.Drawing.Size(101, 32);
-            this.btnDodajSliku.TabIndex = 33;
-            this.btnDodajSliku.Text = "Dodaj sliku";
-            this.btnDodajSliku.UseVisualStyleBackColor = false;
-            // 
-            // txtBrojPrimeraka
-            // 
-            this.txtBrojPrimeraka.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBrojPrimeraka.Location = new System.Drawing.Point(930, 48);
-            this.txtBrojPrimeraka.MaxLength = 2;
-            this.txtBrojPrimeraka.Name = "txtBrojPrimeraka";
-            this.txtBrojPrimeraka.Size = new System.Drawing.Size(46, 22);
-            this.txtBrojPrimeraka.TabIndex = 34;
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(732, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(173, 45);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "Slika mora biti sacuvana u folderu \"Resources\". Sliku nazvati identicno kao naslo" +
+    "v knjige.";
+            this.label11.Visible = false;
             // 
             // Admin
             // 
@@ -852,6 +865,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbKnjiga)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -859,8 +874,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -924,5 +937,6 @@
         private System.Windows.Forms.Button btnNaslovKnjige;
         private System.Windows.Forms.Button btnDodajSliku;
         private System.Windows.Forms.TextBox txtBrojPrimeraka;
+        private System.Windows.Forms.Label label11;
     }
 }

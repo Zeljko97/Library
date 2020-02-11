@@ -19,8 +19,7 @@ namespace Library
 {
     public partial class FormDodajKnjigu : Form
     {
-//dodato
-        string tagovi = "";
+
 
         public FormDodajKnjigu()
         {
@@ -72,11 +71,16 @@ namespace Library
             else
             {
                 ///tagovi
+                ///
+                List<string> lista = new List<string>();
+
+
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)
                 {
                     if (checkedListBox1.GetItemChecked(i))
                     {
-                        tagovi += (checkedListBox1.Items[i]).ToString() + ", ";
+                        lista.Add(checkedListBox1.Items[i].ToString());
+                  
                     }
                 }
 
@@ -97,7 +101,8 @@ namespace Library
                     brojPrimeraka = Convert.ToInt32(txtBrojPrimeraka.Text),
                     brojStrana = Convert.ToInt32(txtBrojStrana.Text),
                     povez = cbPovez.SelectedItem.ToString(),
-                    oznake = new List<string> { tagovi },
+     
+                    oznake = lista,
                 };
 
                 //u kom se sektoru nalazi knjiga

@@ -79,15 +79,30 @@ namespace Library
                 var database = server.GetDatabase("Biblioteka");
 
                 var collection = database.GetCollection<Knjiga>("knjige");
-                //ovde treba ovo za oznake,ali to nisam mogao provaljujem
-             //   var query = Query.And(Query.EQ("naslov", Admin.azuriranje.naslov),Query.EQ("autor",Admin.azuriranje.autor));
+               
 
                 var query = Query.EQ("_id", Admin.azuriranje.Id);
 
-                ////////////////// Ovde da provalimo kako da update vise stvari.
-                var update = MongoDB.Driver.Builders.Update.Set("izdavac",txtIzdavac.Text);
-                ////////////////////
-                //collection.Insert(k);
+            
+                var update = MongoDB.Driver.Builders.Update.Set("naslov",BsonValue.Create(txtNaslov.Text));
+                collection.Update(query, update);
+                update = MongoDB.Driver.Builders.Update.Set("izdavac", BsonValue.Create(txtIzdavac.Text));
+                collection.Update(query, update);
+                 update = MongoDB.Driver.Builders.Update.Set("zanr", BsonValue.Create(cbZanr.Text));
+                collection.Update(query, update);
+                update = MongoDB.Driver.Builders.Update.Set("autor", BsonValue.Create(txtAutor.Text));
+                collection.Update(query, update);
+                update = MongoDB.Driver.Builders.Update.Set("povez", BsonValue.Create(cbPovez.Text));
+                collection.Update(query, update);
+                update = MongoDB.Driver.Builders.Update.Set("brojStrana", BsonValue.Create(txtBrojStrana.Text));
+                collection.Update(query, update);
+                update = MongoDB.Driver.Builders.Update.Set("brojPrimeraka", BsonValue.Create(txtBrojPrimeraka.Text));
+                collection.Update(query, update);
+
+              
+                    
+      
+               
                 MessageBox.Show(txtNaslov.Text + " knjiga je uspesno izmenjena", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

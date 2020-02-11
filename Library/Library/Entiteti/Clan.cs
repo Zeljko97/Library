@@ -19,15 +19,15 @@ namespace Library.Entiteti
         public string adresa { get; set; }
         public string brojTelefona { get; set; }
         public string brojLicneKarte { get; set; }
-        public List<MongoDBRef> iznajmljeneKnjige { get; set; }
-
+      //public List<MongoDBRef> iznajmljeneKnjige { get; set; }
+        public List<ObjectId> iznajmljeneKnjige { get; set; }
         //dodato zbog logovanja
         public string username { get; set; }
         public string password { get; set; }
 
         public Clan()
         {
-            iznajmljeneKnjige = new List<MongoDBRef>();
+            iznajmljeneKnjige = new List<ObjectId>();
         }
 
     }

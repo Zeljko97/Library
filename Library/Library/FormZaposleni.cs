@@ -201,8 +201,9 @@ namespace Library
 
             knjiga1.brojPrimeraka -= 1;
 
-            clan1.iznajmljeneKnjige.Add(new MongoDBRef("iznajmljeneKnjige", knjiga1.Id));
-            knjiga1.IzdataClanovima.Add(new MongoDBRef("izdataClanovima", clan1.Id));
+        //    clan1.iznajmljeneKnjige.Add(new MongoDBRef("iznajmljeneKnjige", knjiga1.Id));
+            clan1.iznajmljeneKnjige.Add(knjiga1.Id);
+            knjiga1.IzdataClanovima.Add(clan1.Id);
 
             collectionClanovi.Save(clan1);
             collectionKnjige.Save(knjiga1);
@@ -289,10 +290,9 @@ namespace Library
            {
                zahtevi.Add(z);
            }
-           for (int i = 0; i < zahtevi.Count; i++)
-           {
-               listView1.Items.Add("Knjiga: \n" + zahtevi[i].knjiga  + "\n Broj clanske karte: \n" + zahtevi[i].brojClanskeKarte + "\n");
-           }
+          
+
+           dataGridView2.DataSource = zahtevi;
         }
         #endregion
 
@@ -322,7 +322,7 @@ namespace Library
             {
                 for (int i = 0; i < clan.iznajmljeneKnjige.Count; i++)
                 {
-                    if (k.Id == clan.iznajmljeneKnjige[i].Id)
+                    if (k.Id == clan.iznajmljeneKnjige[i])//.id
                         listBox1.Items.Add(k.naslov);
                 }
             }
@@ -373,7 +373,16 @@ namespace Library
             var clanoviCollection = database.GetCollection<Clan>("clanovi");
             var knjigeColl = database.GetCollection<Knjiga>("knjige");
 
-            int indexRow = dataGridView1.CurrentRow.Index;
+            //int indexRow = dataGridView1.CurrentRow.Index;
+
+
+
+            if(listBox1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Selektujte knjigu iz liste iznajmljenih knjiga!");
+                return;
+            }
+
 
             Clan clan = new Clan();
             foreach (Clan c in clanoviCollection.Find(Query.EQ("brojClanskeKarte", cbClanovi.SelectedItem.ToString())))
@@ -382,34 +391,119 @@ namespace Library
             }
 
             Knjiga knjiga = new Knjiga();
-            foreach (Knjiga k in knjigeColl.Find(Query.EQ("naslov", (string)dataGridView1[1, indexRow].Value)))
+            foreach (Knjiga k in knjigeColl.Find(Query.EQ("naslov", listBox1.SelectedItem.ToString())))//(string)dataGridView1[1, indexRow].Value)))
             {
                 knjiga = k;
             }
 
-            foreach(MongoDBRef knjigaRef in clan.iznajmljeneKnjige.ToList())
-   
+
+            List<ObjectId> listaKnjiga = new List<ObjectId>();
+            List<ObjectId> listaClanova = new List<ObjectId>();
+
+            foreach(ObjectId izKnjiga in clan.iznajmljeneKnjige.ToList())
             {
-                if (knjigaRef.Id == knjiga.Id)
-             
+                listaKnjiga.Add(izKnjiga);
+            }
+
+            foreach(ObjectId izClanu in knjiga.IzdataClanovima.ToList())
+            {
+                listaClanova.Add(izClanu);
+            }
+
+            for (int i = 0; i < listaKnjiga.Count;i++)
+            {
+
+                if(knjiga.Id == listaKnjiga[i])
                 {
-                    var query = Query.EQ("DBRef(iznajmljeneKnjige",ObjectId.Parse(knjigaRef.Id.ToString()));
-                    
-                    clanoviCollection.Remove(query);
-
-                   
-
-
-
-                    
-                   // clanoviCollection.Save(clan);
+                    listaKnjiga.RemoveAt(i);
+                }
                     knjiga.brojPrimeraka++;
+            }
+
+            knjigeColl.Save(knjiga);
+
+
+            for(int i = 0;i<listaClanova.Count;i++)
+            {
+                if(clan.Id == listaClanova[i])
+                {
+                    listaClanova.RemoveAt(i);
                 }
             }
 
-          
-            knjigeColl.Save(knjiga);
+            var query = Query.EQ("_id", clan.Id);
+            var update = MongoDB.Driver.Builders.Update.Set("iznajmljeneKnjige", BsonValue.Create(listaKnjiga));
+            clanoviCollection.Update(query, update);
+            
+            var query1 = Query.EQ("_id", knjiga.Id);
+            var update1 = MongoDB.Driver.Builders.Update.Set("IzdataClanovima", BsonValue.Create(listaClanova));
+               knjigeColl.Update(query1, update1);
+            
             MessageBox.Show("Knjiga " + knjiga.naslov + " je vracena.");
+    }
+
+        private void btnIzadavanjeZahtev_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.CurrentRow == null )
+            {
+                MessageBox.Show("Izaberite zahtev!");
+                return;
+            }
+            int indexRow = dataGridView2.CurrentRow.Index;
+            string knjiga = (string)dataGridView2[2, indexRow].Value;
+            string brojClanskeKarte = (string)dataGridView2[1, indexRow].Value.ToString();
+            var connectionString = "mongodb://localhost/?safe=true";
+            var server = MongoServer.Create(connectionString);
+            var db = server.GetDatabase("Biblioteka");
+
+
+            var collectionClanovi = db.GetCollection<Clan>("clanovi");
+            var collectionKnjige = db.GetCollection<Knjiga>("knjige");
+
+
+
+
+            Clan clan1 = new Clan();
+            foreach (Clan c in collectionClanovi.Find(Query.EQ("brojClanskeKarte", brojClanskeKarte)))
+            {
+                clan1 = c;
+            }
+            Knjiga knjiga1 = new Knjiga();
+            foreach (Knjiga k in collectionKnjige.Find(Query.EQ("naslov", knjiga)))
+            {
+                knjiga1 = k;
+            }
+            //////////////////
+
+            if (knjiga1.brojPrimeraka < 1)
+            {
+                MessageBox.Show("Trenutno nema primeraka knjige u biblioteci.");
+                return;
+            }
+
+            knjiga1.brojPrimeraka -= 1;
+
+          
+            clan1.iznajmljeneKnjige.Add(knjiga1.Id);
+            knjiga1.IzdataClanovima.Add(clan1.Id);
+
+            collectionClanovi.Save(clan1);
+            collectionKnjige.Save(knjiga1);
+
+            //////////////////
+            string datum = DateTime.Now.ToString();
+            string datumVracanje = DateTime.Now.AddDays(30).ToString();
+
+
+            MessageBox.Show("Izdata knjiga: " + knjiga1.naslov + "\n Datum vracanja: " + datumVracanje);
+
+
+            var collectionZahtevi = db.GetCollection<Zahtev>("zahtevi");
+
+            ObjectId idZahteva = ObjectId.Parse(dataGridView2[0, indexRow].Value.ToString());
+
+            var query = Query.EQ("_id", idZahteva);
+            collectionZahtevi.Remove(query);
         }
     }
 }

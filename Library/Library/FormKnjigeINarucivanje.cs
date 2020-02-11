@@ -14,6 +14,8 @@ using MongoDB.Driver.Linq;
 using MongoDB.Driver.Builders;
 using MongoDB.Bson;
 
+
+using System.IO;
 namespace Library
 {
     public partial class FormKnjigeINarucivanje : Form
@@ -54,12 +56,21 @@ namespace Library
 
                     picturebox1.Size = new Size(80, 80);
                     picturebox1.BackColor = Color.Aqua;
-                    picturebox1.Image = Image.FromFile("../../Resources/"+ k.naslov +".jpg");
+                    string path = @"../../Resources/" + k.naslov + ".jpg";
+                    if (!File.Exists(path))
+                    {
+                        picturebox1.Image = null;
+                        ///ovde ubaciti sliku Image not Found
+                        Controls.Add(label);
+                    }
+                    else
+                    {
+                        picturebox1.Image = Image.FromFile("../../Resources/" + k.naslov + ".jpg");
 
-                    picturebox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                    Controls.Add(label);    
-                    Controls.Add(picturebox1);
-               
+                        picturebox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                        Controls.Add(label);
+                        Controls.Add(picturebox1);
+                    }
 
                     loc1 += 90;
                     if(loc1 > 700)
@@ -158,6 +169,11 @@ namespace Library
         {
             FormNaruci f = new FormNaruci();
             f.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
     }
 }

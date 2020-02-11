@@ -13,6 +13,8 @@ using MongoDB.Driver.Builders;
 using MongoDB.Driver.Linq;
 using MongoDB.Driver;
 
+using System.IO;
+
 using Library.Entiteti;
 
 namespace Library
@@ -249,6 +251,10 @@ namespace Library
         }
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            
+            
+
+            
             int index = dataGridView1.CurrentRow.Index;
             string naslov = (string)dataGridView1[1, index].Value;
             if (index < 0)
@@ -276,9 +282,18 @@ namespace Library
                 label3.Visible = true;
                 label4.Visible = true;
                 label8.Visible = true;
-                //string path = @"../../Resources/" + naslov + ".jpg";
-                pbKnjiga.Image = Image.FromFile("../../Resources/" + naslov + ".jpg");
-                pbKnjiga.SizeMode = PictureBoxSizeMode.StretchImage;
+                string path = @"../../Resources/" + naslov + ".jpg";
+                if (!File.Exists(path))
+                {
+                    pbKnjiga.Image = null;
+                    label11.Visible = true;
+                }
+                else
+                {
+                    pbKnjiga.Image = Image.FromFile("../../Resources/" + naslov + ".jpg");
+                    pbKnjiga.SizeMode = PictureBoxSizeMode.StretchImage;
+                    label11.Visible = false;
+                }
             }
         }
         //sortiranja
@@ -602,7 +617,7 @@ namespace Library
             }
             else
             {
-                string Naslov = (string)dataGridView1[1, index].Value;
+                ObjectId IdKnjige= ObjectId.Parse(dataGridView1[0, index].Value.ToString());
                 string Autor = (string)dataGridView1[2, index].Value;
 
                 var connectionString = "mongodb://localhost/?safe=true";
@@ -610,15 +625,20 @@ namespace Library
                 var database = server.GetDatabase("Biblioteka");
                 var collection = database.GetCollection<Knjiga>("knjige");
 
-                //MongoCursor<Zaposleni> zaposleni = collection.FindAll();
-                var query = Query.And(Query.EQ("naslov", Naslov),
-                           Query.EQ("autor", Autor)
-                           );
-                //ucita broj primeraka knjige
 
-                // tom broju dodaj vrednost iz txtBrojPrimeraka
+                Knjiga knjiga = new Knjiga();
+                foreach (Knjiga k in collection.Find(Query.EQ("_id", IdKnjige)))
+                {
+                    knjiga = k;
+                }
+                
+                int brPrim = Int32.Parse(txtBrojPrimeraka.Text);
+                knjiga.brojPrimeraka += brPrim;
 
-                // i onda izvrsi update(query,update);
+                collection.Save(knjiga);
+
+                
+              
 
 
             }

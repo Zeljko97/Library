@@ -30,7 +30,6 @@
         {
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnIzaberi = new System.Windows.Forms.Button();
-            this.btnNaruci = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -43,7 +42,7 @@
             "decja knjiga",
             "poezija",
             "klasika"});
-            this.comboBox1.Location = new System.Drawing.Point(26, 12);
+            this.comboBox1.Location = new System.Drawing.Point(26, 14);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(175, 21);
             this.comboBox1.TabIndex = 0;
@@ -59,24 +58,14 @@
             this.btnIzaberi.UseVisualStyleBackColor = true;
             this.btnIzaberi.Click += new System.EventHandler(this.btnIzaberi_Click);
             // 
-            // btnNaruci
-            // 
-            this.btnNaruci.Location = new System.Drawing.Point(418, 9);
-            this.btnNaruci.Name = "btnNaruci";
-            this.btnNaruci.Size = new System.Drawing.Size(83, 23);
-            this.btnNaruci.TabIndex = 2;
-            this.btnNaruci.Text = "Naruci knjigu";
-            this.btnNaruci.UseVisualStyleBackColor = true;
-            this.btnNaruci.Click += new System.EventHandler(this.btnNaruci_Click);
-            // 
             // FormKnjigeINarucivanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 391);
-            this.Controls.Add(this.btnNaruci);
-            this.Controls.Add(this.btnIzaberi);
+            this.BackColor = System.Drawing.Color.RosyBrown;
+            this.ClientSize = new System.Drawing.Size(867, 391);
             this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnIzaberi);
             this.Name = "FormKnjigeINarucivanje";
             this.Text = "FormKnjigeINarucivanje";
             this.Load += new System.EventHandler(this.FormKnjigeINarucivanje_Load);
@@ -88,7 +77,6 @@
 
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnIzaberi;
-        private System.Windows.Forms.Button btnNaruci;
 
     }
 }

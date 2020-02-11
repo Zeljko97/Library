@@ -58,21 +58,23 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnUcitajZahteve = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.ttPromena = new System.Windows.Forms.ToolTip(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnZanr = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.btnIznajmljeneKnjige = new System.Windows.Forms.Button();
-            this.btnPodaci = new System.Windows.Forms.Button();
             this.btnVracenaKnjiga = new System.Windows.Forms.Button();
+            this.btnPodaci = new System.Windows.Forms.Button();
+            this.btnIznajmljeneKnjige = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnIzadavanjeZahtev = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -96,7 +98,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 284);
+            this.dataGridView1.Location = new System.Drawing.Point(17, 309);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -106,7 +108,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(755, 190);
+            this.dataGridView1.Size = new System.Drawing.Size(755, 165);
             this.dataGridView1.TabIndex = 1;
             // 
             // txtImePisca
@@ -398,18 +400,6 @@
             this.btnUcitajZahteve.UseVisualStyleBackColor = true;
             this.btnUcitajZahteve.Click += new System.EventHandler(this.btnUcitajZahteve_Click);
             // 
-            // listView1
-            // 
-            this.listView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(26, 77);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(240, 166);
-            this.listView1.TabIndex = 28;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SeaShell;
@@ -457,7 +447,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(14, 265);
+            this.label7.Location = new System.Drawing.Point(14, 290);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(158, 16);
             this.label7.TabIndex = 31;
@@ -467,11 +457,12 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.GhostWhite;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.btnIzadavanjeZahtev);
+            this.panel3.Controls.Add(this.dataGridView2);
             this.panel3.Controls.Add(this.btnVracenaKnjiga);
             this.panel3.Controls.Add(this.btnPodaci);
             this.panel3.Controls.Add(this.btnIznajmljeneKnjige);
             this.panel3.Controls.Add(this.listBox1);
-            this.panel3.Controls.Add(this.listView1);
             this.panel3.Controls.Add(this.cbClanovi);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.comboBox1);
@@ -480,28 +471,20 @@
             this.panel3.Controls.Add(this.btnIzdavanje);
             this.panel3.Location = new System.Drawing.Point(451, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(613, 266);
+            this.panel3.Size = new System.Drawing.Size(613, 291);
             this.panel3.TabIndex = 32;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // listBox1
+            // btnVracenaKnjiga
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(465, 72);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(141, 121);
-            this.listBox1.TabIndex = 31;
-            // 
-            // btnIznajmljeneKnjige
-            // 
-            this.btnIznajmljeneKnjige.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnIznajmljeneKnjige.Location = new System.Drawing.Point(465, 3);
-            this.btnIznajmljeneKnjige.Name = "btnIznajmljeneKnjige";
-            this.btnIznajmljeneKnjige.Size = new System.Drawing.Size(120, 62);
-            this.btnIznajmljeneKnjige.TabIndex = 32;
-            this.btnIznajmljeneKnjige.Text = "Ucitaj iznajmljene knjige";
-            this.btnIznajmljeneKnjige.UseVisualStyleBackColor = true;
-            this.btnIznajmljeneKnjige.Click += new System.EventHandler(this.button1_Click);
+            this.btnVracenaKnjiga.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnVracenaKnjiga.Location = new System.Drawing.Point(301, 220);
+            this.btnVracenaKnjiga.Name = "btnVracenaKnjiga";
+            this.btnVracenaKnjiga.Size = new System.Drawing.Size(139, 36);
+            this.btnVracenaKnjiga.TabIndex = 34;
+            this.btnVracenaKnjiga.Text = "Vratiti knjigu";
+            this.btnVracenaKnjiga.UseVisualStyleBackColor = true;
+            this.btnVracenaKnjiga.Click += new System.EventHandler(this.btnVracenaKnjiga_Click);
             // 
             // btnPodaci
             // 
@@ -514,16 +497,42 @@
             this.btnPodaci.UseVisualStyleBackColor = true;
             this.btnPodaci.Click += new System.EventHandler(this.btnPodaci_Click);
             // 
-            // btnVracenaKnjiga
+            // btnIznajmljeneKnjige
             // 
-            this.btnVracenaKnjiga.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnVracenaKnjiga.Location = new System.Drawing.Point(301, 220);
-            this.btnVracenaKnjiga.Name = "btnVracenaKnjiga";
-            this.btnVracenaKnjiga.Size = new System.Drawing.Size(139, 36);
-            this.btnVracenaKnjiga.TabIndex = 34;
-            this.btnVracenaKnjiga.Text = "Vratiti knjigu";
-            this.btnVracenaKnjiga.UseVisualStyleBackColor = true;
-            this.btnVracenaKnjiga.Click += new System.EventHandler(this.btnVracenaKnjiga_Click);
+            this.btnIznajmljeneKnjige.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIznajmljeneKnjige.Location = new System.Drawing.Point(465, 3);
+            this.btnIznajmljeneKnjige.Name = "btnIznajmljeneKnjige";
+            this.btnIznajmljeneKnjige.Size = new System.Drawing.Size(120, 62);
+            this.btnIznajmljeneKnjige.TabIndex = 32;
+            this.btnIznajmljeneKnjige.Text = "Ucitaj iznajmljene knjige";
+            this.btnIznajmljeneKnjige.UseVisualStyleBackColor = true;
+            this.btnIznajmljeneKnjige.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(465, 72);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(141, 121);
+            this.listBox1.TabIndex = 31;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(26, 88);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView2.TabIndex = 35;
+            // 
+            // btnIzadavanjeZahtev
+            // 
+            this.btnIzadavanjeZahtev.Location = new System.Drawing.Point(26, 244);
+            this.btnIzadavanjeZahtev.Name = "btnIzadavanjeZahtev";
+            this.btnIzadavanjeZahtev.Size = new System.Drawing.Size(159, 40);
+            this.btnIzadavanjeZahtev.TabIndex = 36;
+            this.btnIzadavanjeZahtev.Text = "Izdaj na osnovu zahteva";
+            this.btnIzadavanjeZahtev.UseVisualStyleBackColor = true;
+            this.btnIzadavanjeZahtev.Click += new System.EventHandler(this.btnIzadavanjeZahtev_Click);
             // 
             // FormZaposleni
             // 
@@ -551,6 +560,7 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -586,7 +596,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnUcitajZahteve;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ToolTip ttPromena;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label6;
@@ -596,5 +605,7 @@
         private System.Windows.Forms.Button btnIznajmljeneKnjige;
         private System.Windows.Forms.Button btnPodaci;
         private System.Windows.Forms.Button btnVracenaKnjiga;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btnIzadavanjeZahtev;
     }
 }

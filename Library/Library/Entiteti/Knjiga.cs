@@ -20,11 +20,11 @@ namespace Library.Entiteti
         public List<string> oznake { get; set; }
         public MongoDBRef Sektor { get; set; }
         ///
-        public List<MongoDBRef> IzdataClanovima { get; set; }
+        public List<ObjectId> IzdataClanovima { get; set; }
 
         public Knjiga()
         {
-            IzdataClanovima = new List<MongoDBRef>();
+            IzdataClanovima = new List<ObjectId>();
         }
     }
 }

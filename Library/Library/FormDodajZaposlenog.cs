@@ -55,7 +55,7 @@ namespace Library
                 var database = server.GetDatabase("Biblioteka");
 
                 var collection = database.GetCollection<Zaposleni>("zaposleni");
-                Zaposleni z = new Zaposleni { ime = txtIme.Text, prezime = txtPrezime.Text, radni_staz = Convert.ToInt32(txtRadniStaz.Text), JMBG = txtJMBG.Text, username = user, password = "mongo" };
+                Zaposleni z = new Zaposleni { ime = txtIme.Text, prezime = txtPrezime.Text, radni_staz = Convert.ToInt32(txtRadniStaz.Text), JMBG = txtJMBG.Text, datum_rodjenja = dateTimePicker1.Text};
                 collection.Insert(z);
                 MessageBox.Show(txtIme.Text + " " + txtPrezime.Text + " je uspesno dodat","",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 this.Close();

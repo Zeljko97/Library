@@ -332,7 +332,7 @@ namespace Library
             {
                for(int i = 0;i<clan.iznajmljeneKnjige.Count;i++)
                {
-                   if (k.Id == clan.iznajmljeneKnjige[i].Id)
+                   if (k.Id == clan.iznajmljeneKnjige[i])//.id
                        list.Items.Add(k.naslov);
                }
             }
