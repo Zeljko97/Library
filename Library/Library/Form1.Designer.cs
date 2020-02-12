@@ -28,32 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
-            this.btnOpis = new System.Windows.Forms.Button();
             this.btnKnjige = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(762, 225);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 41);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.button2.BackColor = System.Drawing.Color.LightYellow;
             this.button2.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(745, 80);
+            this.button2.Location = new System.Drawing.Point(12, 224);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 51);
+            this.button2.Size = new System.Drawing.Size(138, 51);
             this.button2.TabIndex = 1;
             this.button2.Text = "Zaposlen";
             this.button2.UseVisualStyleBackColor = false;
@@ -61,46 +48,41 @@
             // 
             // btnAdmin
             // 
-            this.btnAdmin.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.btnAdmin.BackColor = System.Drawing.Color.Aquamarine;
             this.btnAdmin.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.Location = new System.Drawing.Point(745, 12);
+            this.btnAdmin.Location = new System.Drawing.Point(12, 172);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(101, 46);
+            this.btnAdmin.Size = new System.Drawing.Size(138, 46);
             this.btnAdmin.TabIndex = 2;
             this.btnAdmin.Text = "Admin";
             this.btnAdmin.UseVisualStyleBackColor = false;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
-            // btnOpis
-            // 
-            this.btnOpis.Location = new System.Drawing.Point(1, 327);
-            this.btnOpis.Name = "btnOpis";
-            this.btnOpis.Size = new System.Drawing.Size(81, 25);
-            this.btnOpis.TabIndex = 4;
-            this.btnOpis.Text = "Opis";
-            this.btnOpis.UseVisualStyleBackColor = true;
-            this.btnOpis.Click += new System.EventHandler(this.btnOpis_Click);
-            // 
             // btnKnjige
             // 
-            this.btnKnjige.Font = new System.Drawing.Font("Kristen ITC", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKnjige.Location = new System.Drawing.Point(12, 12);
+            this.btnKnjige.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnKnjige.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKnjige.ForeColor = System.Drawing.Color.White;
+            this.btnKnjige.Location = new System.Drawing.Point(380, 12);
             this.btnKnjige.Name = "btnKnjige";
             this.btnKnjige.Size = new System.Drawing.Size(219, 49);
             this.btnKnjige.TabIndex = 5;
             this.btnKnjige.Text = "Pregledaj knjige";
-            this.btnKnjige.UseVisualStyleBackColor = true;
+            this.btnKnjige.UseVisualStyleBackColor = false;
             this.btnKnjige.Click += new System.EventHandler(this.btnKnjige_Click);
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.button3.BackColor = System.Drawing.Color.Tan;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(12, 106);
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.Location = new System.Drawing.Point(12, 281);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(219, 75);
+            this.button3.Size = new System.Drawing.Size(138, 62);
             this.button3.TabIndex = 6;
-            this.button3.Text = "Clan Biblioteke";
+            this.button3.Text = "Clan biblioteke";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -110,13 +92,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Library.Properties.Resources.Library;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(899, 355);
+            this.ClientSize = new System.Drawing.Size(877, 355);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnKnjige);
-            this.Controls.Add(this.btnOpis);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -128,11 +108,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnAdmin;
-        private System.Windows.Forms.Button btnOpis;
         private System.Windows.Forms.Button btnKnjige;
         private System.Windows.Forms.Button button3;
     }

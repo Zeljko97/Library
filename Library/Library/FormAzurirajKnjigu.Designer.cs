@@ -53,6 +53,7 @@
             this.txtBrojPrimeraka.Name = "txtBrojPrimeraka";
             this.txtBrojPrimeraka.Size = new System.Drawing.Size(173, 29);
             this.txtBrojPrimeraka.TabIndex = 46;
+            this.txtBrojPrimeraka.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBrojPrimeraka_KeyPress);
             // 
             // lblBrojPrimeraka
             // 
@@ -74,6 +75,7 @@
             this.txtBrojStrana.Name = "txtBrojStrana";
             this.txtBrojStrana.Size = new System.Drawing.Size(173, 29);
             this.txtBrojStrana.TabIndex = 45;
+            this.txtBrojStrana.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBrojStrana_KeyPress);
             // 
             // lblBrojStrana
             // 

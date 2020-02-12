@@ -54,7 +54,7 @@
             this.button2.Location = new System.Drawing.Point(17, 283);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 34);
-            this.button2.TabIndex = 41;
+            this.button2.TabIndex = 38;
             this.button2.Text = "<- Back";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -67,7 +67,7 @@
             this.btnPromeni.Location = new System.Drawing.Point(241, 283);
             this.btnPromeni.Name = "btnPromeni";
             this.btnPromeni.Size = new System.Drawing.Size(172, 34);
-            this.btnPromeni.TabIndex = 40;
+            this.btnPromeni.TabIndex = 37;
             this.btnPromeni.Text = "Promeni";
             this.btnPromeni.UseVisualStyleBackColor = false;
             this.btnPromeni.Click += new System.EventHandler(this.btnPromeni_Click);
@@ -100,6 +100,7 @@
             this.txtUserNameOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserNameOld.Location = new System.Drawing.Point(241, 44);
             this.txtUserNameOld.Name = "txtUserNameOld";
+            this.txtUserNameOld.ReadOnly = true;
             this.txtUserNameOld.Size = new System.Drawing.Size(172, 29);
             this.txtUserNameOld.TabIndex = 31;
             // 
@@ -132,7 +133,7 @@
             this.txtPasswordRetype.Name = "txtPasswordRetype";
             this.txtPasswordRetype.PasswordChar = '*';
             this.txtPasswordRetype.Size = new System.Drawing.Size(172, 29);
-            this.txtPasswordRetype.TabIndex = 38;
+            this.txtPasswordRetype.TabIndex = 36;
             // 
             // txtPasswordNew
             // 
@@ -141,7 +142,7 @@
             this.txtPasswordNew.Name = "txtPasswordNew";
             this.txtPasswordNew.PasswordChar = '*';
             this.txtPasswordNew.Size = new System.Drawing.Size(172, 29);
-            this.txtPasswordNew.TabIndex = 36;
+            this.txtPasswordNew.TabIndex = 35;
             // 
             // txtUsernameNew
             // 
@@ -156,6 +157,7 @@
             this.txtPasswordOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPasswordOld.Location = new System.Drawing.Point(241, 79);
             this.txtPasswordOld.Name = "txtPasswordOld";
+            this.txtPasswordOld.ReadOnly = true;
             this.txtPasswordOld.Size = new System.Drawing.Size(172, 29);
             this.txtPasswordOld.TabIndex = 32;
             // 
@@ -208,7 +210,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(129, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(192, 25);
             this.label1.TabIndex = 26;

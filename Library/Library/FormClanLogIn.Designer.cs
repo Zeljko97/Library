@@ -113,10 +113,10 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(25, 367);
+            this.btnBack.Location = new System.Drawing.Point(25, 354);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(113, 45);
-            this.btnBack.TabIndex = 16;
+            this.btnBack.TabIndex = 17;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -136,8 +136,8 @@
             this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReset.Location = new System.Drawing.Point(679, 197);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 18;
+            this.btnReset.Size = new System.Drawing.Size(90, 23);
+            this.btnReset.TabIndex = 15;
             this.btnReset.Text = "Reset";
             this.toolTip1.SetToolTip(this.btnReset, "Informacije kome da se javite i zatrazite resetovanje passworda");
             this.btnReset.UseVisualStyleBackColor = false;
@@ -145,13 +145,14 @@
             // 
             // btnSingIn
             // 
-            this.btnSingIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSingIn.Location = new System.Drawing.Point(564, 285);
+            this.btnSingIn.BackColor = System.Drawing.Color.LightGreen;
+            this.btnSingIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSingIn.Location = new System.Drawing.Point(564, 268);
             this.btnSingIn.Name = "btnSingIn";
-            this.btnSingIn.Size = new System.Drawing.Size(210, 24);
-            this.btnSingIn.TabIndex = 19;
+            this.btnSingIn.Size = new System.Drawing.Size(210, 35);
+            this.btnSingIn.TabIndex = 16;
             this.btnSingIn.Text = "Sing In";
-            this.btnSingIn.UseVisualStyleBackColor = true;
+            this.btnSingIn.UseVisualStyleBackColor = false;
             this.btnSingIn.Click += new System.EventHandler(this.btnSingIn_Click);
             // 
             // pictureBox1

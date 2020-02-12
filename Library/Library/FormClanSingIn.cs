@@ -23,13 +23,17 @@ namespace Library
         {
             InitializeComponent();
         }
-
+        #region funkcije
         private void button1_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(txtClanskaKarta.Text))
+            {
+                MessageBox.Show("Morate uneti broj clanske karte.","Greska",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
             var connectionString = "mongodb://localhost/?safe=true";
             var server = MongoServer.Create(connectionString);
             var database = server.GetDatabase("Biblioteka");
-
             var clanoviCollection = database.GetCollection<Clan>("clanovi");
 
             Clan clan = new Clan();
@@ -37,10 +41,10 @@ namespace Library
             {
                 clan = c;
             }
-
             if(clan.ime == null)
             {
-                MessageBox.Show("Niste uclanjeni u biblioteku.");
+                MessageBox.Show("Niste uclanjeni u biblioteci!\t Morate se uclaniti da biste imali nalog","Greska",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
             }
             else
             {
@@ -54,6 +58,16 @@ namespace Library
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(txtUsername.Text))
+            {
+                MessageBox.Show("Morate uneti username", "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (String.IsNullOrEmpty(txtPassword.Text))
+            {
+                MessageBox.Show("Morate uneti broj clanske karte.", "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var connectionString = "mongodb://localhost/?safe=true";
             var server = MongoServer.Create(connectionString);
             var database = server.GetDatabase("Biblioteka");
@@ -65,15 +79,21 @@ namespace Library
             {
                 clan = c;
             }
-
             var query = Query.EQ("brojClanskeKarte", clan.brojClanskeKarte);
             var update = MongoDB.Driver.Builders.Update.Set("username", BsonValue.Create(txtUsername.Text));
             var update1 = MongoDB.Driver.Builders.Update.Set("password", BsonValue.Create(txtPassword.Text));
-
             clanoviCollection.Update(query, update);
             clanoviCollection.Update(query, update1);
-
-            MessageBox.Show("Uspesno ste kreirali nalog");
+            MessageBox.Show("Uspesno ste kreirali nalog","Kreiranje uspesno",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
+        #endregion
+
+        #region ogranicenje
+        private void txtClanskaKarta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+                if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                    e.Handled = true;
+        }
+        #endregion
     }
 }

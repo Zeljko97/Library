@@ -30,10 +30,12 @@
         {
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnIzaberi = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "roman",
@@ -42,32 +44,49 @@
             "decja knjiga",
             "poezija",
             "klasika"});
-            this.comboBox1.Location = new System.Drawing.Point(26, 14);
+            this.comboBox1.Location = new System.Drawing.Point(12, 14);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(175, 21);
+            this.comboBox1.Size = new System.Drawing.Size(189, 28);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnIzaberi
             // 
-            this.btnIzaberi.Location = new System.Drawing.Point(226, 12);
+            this.btnIzaberi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIzaberi.Location = new System.Drawing.Point(207, 12);
             this.btnIzaberi.Name = "btnIzaberi";
-            this.btnIzaberi.Size = new System.Drawing.Size(75, 23);
+            this.btnIzaberi.Size = new System.Drawing.Size(159, 30);
             this.btnIzaberi.TabIndex = 1;
             this.btnIzaberi.Text = "Izaberi zanr";
             this.btnIzaberi.UseVisualStyleBackColor = true;
             this.btnIzaberi.Click += new System.EventHandler(this.btnIzaberi_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(853, 11);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(135, 30);
+            this.btnBack.TabIndex = 2;
+            this.btnBack.Text = "<-- Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // FormKnjigeINarucivanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.RosyBrown;
-            this.ClientSize = new System.Drawing.Size(867, 391);
+            this.BackColor = System.Drawing.Color.OliveDrab;
+            this.ClientSize = new System.Drawing.Size(1000, 457);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnIzaberi);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormKnjigeINarucivanje";
-            this.Text = "FormKnjigeINarucivanje";
+            this.ShowIcon = false;
+            this.Text = "Knjige";
             this.Load += new System.EventHandler(this.FormKnjigeINarucivanje_Load);
             this.ResumeLayout(false);
 
@@ -77,6 +96,6 @@
 
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnIzaberi;
-
+        private System.Windows.Forms.Button btnBack;
     }
 }

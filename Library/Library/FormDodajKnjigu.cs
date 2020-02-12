@@ -19,8 +19,6 @@ namespace Library
 {
     public partial class FormDodajKnjigu : Form
     {
-
-
         public FormDodajKnjigu()
         {
             InitializeComponent();
@@ -71,10 +69,7 @@ namespace Library
             else
             {
                 ///tagovi
-                ///
                 List<string> lista = new List<string>();
-
-
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)
                 {
                     if (checkedListBox1.GetItemChecked(i))
@@ -83,7 +78,6 @@ namespace Library
                   
                     }
                 }
-
                 var connectionString = "mongodb://localhost/?safe=true";
                 var server = MongoServer.Create(connectionString);
                 var database = server.GetDatabase("Biblioteka");

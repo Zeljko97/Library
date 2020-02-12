@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 using MongoDB.Bson;
 using MongoDB.Driver.Builders;
@@ -40,17 +41,8 @@ namespace Library
             label6.Text = "Broj licne karte:" + FormClanLogIn.trClan.brojLicneKarte;
             label13.Text = "Broj clanske karte:" + FormClanLogIn.trClan.brojClanskeKarte;
             //var izn = database.GetCollection<Clan>("clanovi");
-            //MongoCursor<Clan> clan = izn.Find(Query.EQ("Id", FormClanLogIn.trClan.Id));
-            //foreach (Clan c in clan)
-            //{
-
-            //}
-
-
             var collection = database.GetCollection<Knjiga>("knjige");
-
             MongoCursor<Knjiga> knjige = collection.FindAll();
-
             List<Knjiga> listaKnjiga = new List<Knjiga>();
 
             foreach (Knjiga k in knjige.ToArray<Knjiga>())
@@ -64,74 +56,69 @@ namespace Library
             dataGridView1.Columns["povez"].Visible = false;
             dataGridView1.Columns["brojStrana"].Visible = false;
             dataGridView1.Columns["brojPrimeraka"].Visible = false;
+            dataGridView1.Columns["Sektor"].Visible = false;
+            UcitajIznajmljene();
         }
-
-        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void UcitajIznajmljene()
         {
-            int index = dataGridView1.CurrentRow.Index;
-            string naslov = (string)dataGridView1[1, index].Value;
-            if (index < 0)
-            {
-                lblNaslov.Visible = false;
-                lblAutor.Visible = false;
-                lblIzdavac.Visible = false;
-                lblBrojPrimeraka.Visible = false;
-                lblBrojStranica.Visible = false;
-                lblPovez.Visible = false;
-                lblZanr.Visible = false;
-                lblNaslov.Text = "";
-                lblAutor.Text = "";
-                lblIzdavac.Text = "";
-                lblBrojStranica.Text = "";
-                lblBrojPrimeraka.Text = "";
-                lblPovez.Text = "";
-                lblZanr.Text = "";
-            }
-            else
-            {
-                lblNaslov.Text = "Naslov: " + (string)dataGridView1[1,index].Value;
-                lblAutor.Text = "Autor: " + (string)dataGridView1[2, index].Value;
-                lblZanr.Text = "Zanr: " + (string)dataGridView1[3, index].Value;
-                lblIzdavac.Text = "Izdavac: " + (string)dataGridView1[4, index].Value;
-                lblPovez.Text = "Povez: " + (string)dataGridView1[5, index].Value;
-                lblBrojStranica.Text = "Broj stranica: " + (string)dataGridView1[6, index].Value.ToString();
-                lblBrojPrimeraka.Text = "Broj primeraka: " + (string)dataGridView1[7, index].Value.ToString();
-                lblNaslov.Visible = true;
-                lblAutor.Visible = true;
-                lblIzdavac.Visible = true;
-                lblBrojPrimeraka.Visible = true;
-                lblBrojStranica.Visible = true;
-                lblPovez.Visible = true;
-                lblZanr.Visible = true;
+            var connectionString = "mongodb://localhost/?safe=true";
+            var server = MongoServer.Create(connectionString);
+            var database = server.GetDatabase("Biblioteka");
+            var collection = database.GetCollection<Clan>("clanovi");
 
-                pictureBox1.Image = Image.FromFile("../../Resources/" + naslov + ".jpg");
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            var knjigeColl = database.GetCollection<Knjiga>("knjige");
+            Clan clan = new Clan();
+            foreach (Clan c in collection.Find(Query.EQ("brojClanskeKarte", FormClanLogIn.trClan.brojClanskeKarte)))
+            {
+                clan = c;
+            }
+            foreach (Knjiga k in knjigeColl.FindAll())
+            {
+                for (int i = 0; i < clan.iznajmljeneKnjige.Count; i++)
+                {
+                    if (k.Id == clan.iznajmljeneKnjige[i])//.id
+                        list.Items.Add(k.naslov);
+                }
             }
         }
-
+        private void Sakrij()
+        {
+            dataGridView1.Columns["Id"].Visible = false;
+            dataGridView1.Columns["zanr"].Visible = false;
+            dataGridView1.Columns["izdavac"].Visible = false;
+            dataGridView1.Columns["povez"].Visible = false;
+            dataGridView1.Columns["brojStrana"].Visible = false;
+            dataGridView1.Columns["brojPrimeraka"].Visible = false;
+            dataGridView1.Columns["Sektor"].Visible = false;
+        }
+        private void PrikazLabela(bool s)
+        {
+            lblNaslov.Visible = s;
+            lblAutor.Visible = s;
+            lblIzdavac.Visible = s;
+            lblBrojPrimeraka.Visible = s;
+            lblBrojStranica.Visible = s;
+            lblPovez.Visible = s;
+            lblZanr.Visible = s;
+            lblNaslov.Text = "";
+            lblAutor.Text = "";
+            lblIzdavac.Text = "";
+            lblBrojStranica.Text = "";
+            lblBrojPrimeraka.Text = "";
+            lblPovez.Text = "";
+            lblZanr.Text = "";
+        }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = dataGridView1.CurrentRow.Index;
-            string naslov = (string)dataGridView1[1, index].Value;
-            if (index < 0)
+            if (dataGridView1.CurrentRow==null)
             {
-                lblNaslov.Visible = false;
-                lblAutor.Visible = false;
-                lblIzdavac.Visible = false;
-                lblBrojPrimeraka.Visible = false;
-                lblBrojStranica.Visible = false;
-                lblPovez.Visible = false;
-                lblZanr.Visible = false;
-                lblNaslov.Text = "";
-                lblAutor.Text = "";
-                lblIzdavac.Text = "";
-                lblBrojStranica.Text = "";
-                lblBrojPrimeraka.Text = "";
-                lblPovez.Text = "";
-                lblZanr.Text = "";
+                PrikazLabela(false);
             }
             else
             {
+                int index = dataGridView1.CurrentRow.Index;
+                string naslov = (string)dataGridView1[1, index].Value;
+                PrikazLabela(true);
                 lblNaslov.Text = "Naslov: " + (string)dataGridView1[1, index].Value;
                 lblAutor.Text = "Autor: " + (string)dataGridView1[2, index].Value;
                 lblZanr.Text = "Zanr: " + (string)dataGridView1[3, index].Value;
@@ -139,16 +126,18 @@ namespace Library
                 lblPovez.Text = "Povez: " + (string)dataGridView1[5, index].Value;
                 lblBrojStranica.Text = "Broj stranica: " + (string)dataGridView1[6, index].Value.ToString();
                 lblBrojPrimeraka.Text = "Broj primeraka: " + (string)dataGridView1[7, index].Value.ToString();
-                lblNaslov.Visible = true;
-                lblAutor.Visible = true;
-                lblIzdavac.Visible = true;
-                lblBrojPrimeraka.Visible = true;
-                lblBrojStranica.Visible = true;
-                lblPovez.Visible = true;
-                lblZanr.Visible = true;
 
-                pictureBox1.Image = Image.FromFile("../../Resources/" + naslov + ".jpg");
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                string path = @"../../Resources/" + naslov + ".jpg";
+                if (!File.Exists(path))
+                {
+                    pictureBox1.Image = Image.FromFile("../../Resources/NotFound.png");
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                else
+                {
+                    pictureBox1.Image = Image.FromFile("../../Resources/" + naslov + ".jpg");
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
             }
         }
 
@@ -157,6 +146,7 @@ namespace Library
             if (String.IsNullOrEmpty(txtKnjiga.Text))
             {
                 MessageBox.Show("Niste uneli naslov knjige da biste uspesno pretrazili bazu.", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             else
             {
@@ -174,14 +164,17 @@ namespace Library
 
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = knjige;
-                dataGridView1.Columns["Id"].Visible = false;
-                dataGridView1.Columns["Sektor"].Visible = false;
-
+                Sakrij();
             }
         }
 
         private void btnPisca_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(txtImePisca.Text))
+            {
+                MessageBox.Show("Niste uneli ime i prezime autora knjige da biste uspesno pretrazili knjige.", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var connectionString = "mongodb://localhost/?safe=true";
             var server = MongoServer.Create(connectionString);
             var db = server.GetDatabase("Biblioteka");
@@ -197,6 +190,7 @@ namespace Library
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = knjige;
+            Sakrij();
         }
 
         private void btnZanr_Click(object sender, EventArgs e)
@@ -270,12 +264,7 @@ namespace Library
             }
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = knjige;
-            dataGridView1.Columns["Id"].Visible = false;
-            dataGridView1.Columns["zanr"].Visible = false;
-            dataGridView1.Columns["izdavac"].Visible = false;
-            dataGridView1.Columns["povez"].Visible = false;
-            dataGridView1.Columns["brojStrana"].Visible = false;
-            dataGridView1.Columns["brojPrimeraka"].Visible = false;
+            Sakrij();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -293,59 +282,22 @@ namespace Library
 
         private void btnIznajmi_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.CurrentRow==null)
+            {
+                MessageBox.Show("Niste izabrali knjigu! \nSelektujte knjigu koju zelite iznajmiti.","Greska",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+            }
             var connectionString = "mongodb://localhost/?safe=true";
             var server = MongoServer.Create(connectionString);
             var database = server.GetDatabase("Biblioteka");
 
             var collectionZahtevi = database.GetCollection<Zahtev>("zahtevi");
 
-
             int index = dataGridView1.CurrentRow.Index;
             Zahtev zahtev = new Zahtev { knjiga = (string)dataGridView1[1, index].Value, brojClanskeKarte = Int32.Parse(FormClanLogIn.trClan.brojClanskeKarte) };
             collectionZahtevi.Insert(zahtev);
 
-            MessageBox.Show("Poslali ste zahtev za knjigom. ");
-
-
-        }
-
-        private void btnVratiKnjigu_Click(object sender, EventArgs e)
-        {
-            var connectionString = "mongodb://localhost/?safe=true";
-            var server = MongoServer.Create(connectionString);
-            var database = server.GetDatabase("Biblioteka");
-
-            var collection = database.GetCollection<Clan>("clanovi");
-         
-            var knjigeColl = database.GetCollection<Knjiga>("knjige");
-
-            Clan clan = FormClanLogIn.trClan;
-
-      /*    foreach(MongoDBRef k in clan.iznajmljeneKnjige.ToList()  )
-          {
-              Knjiga knjiga = database.FetchDBRefAs<Knjiga>(k);
-              MessageBox.Show(knjiga.naslov);
-          }
-            */
-
-            foreach(Knjiga k in knjigeColl.FindAll())
-            {
-               for(int i = 0;i<clan.iznajmljeneKnjige.Count;i++)
-               {
-                   if (k.Id == clan.iznajmljeneKnjige[i])//.id
-                       list.Items.Add(k.naslov);
-               }
-            }
-           /* for(int i = 0;i<clan.iznajmljeneKnjige.Count;i++)
-            {
-                MessageBox.Show(clan.iznajmljeneKnjige[i].ToString());
-            }*/
-            
-
-
-      
-
-
+            MessageBox.Show("Uspesno se poslali zahtev za knjigom.\nInformacije o iznajmljivanju cete dobiti od zaposlenog lica u biblioteci.","Uspesno poslat zahtev",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
 }

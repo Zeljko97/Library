@@ -151,12 +151,6 @@
     <Compile Include="FormDodavanjeClana.Designer.cs">
       <DependentUpon>FormDodavanjeClana.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormIzdavanje.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormIzdavanje.Designer.cs">
-      <DependentUpon>FormIzdavanje.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormKnjigeINarucivanje.cs">
       <SubType>Form</SubType>
     </Compile>

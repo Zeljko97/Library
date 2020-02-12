@@ -22,11 +22,12 @@ namespace Library
     {
 
         OpenFileDialog fd = new OpenFileDialog();
-
         public FormKnjigeINarucivanje()
         {
             InitializeComponent();
         }
+
+        #region Funkcije
 
         private void FormKnjigeINarucivanje_Load(object sender, EventArgs e)
         {
@@ -36,7 +37,6 @@ namespace Library
             var database = server.GetDatabase("Biblioteka");
 
             var collection = database.GetCollection<Knjiga>("knjige");
-
           MongoCursor<Knjiga> knjige= collection.FindAll();
 
             int loc1 = 10;
@@ -50,51 +50,42 @@ namespace Library
                   //  picturebox1.Name = "picturebox1";
                   //  label.Name = "label";
                     picturebox1.Location = new Point(loc1, loc2);
-                    label.Location = new Point(loc1, loc2 + 80);
+                    label.Location = new Point(loc1, loc2 + 130);
                     label.Text = k.naslov;
                     label.Size = new Size(80, 20);
 
-                    picturebox1.Size = new Size(80, 80);
+                    picturebox1.Size = new Size(100, 130);
                     picturebox1.BackColor = Color.Aqua;
+                    picturebox1.BorderStyle = BorderStyle.Fixed3D;
                     string path = @"../../Resources/" + k.naslov + ".jpg";
                     if (!File.Exists(path))
                     {
-                        picturebox1.Image = null;
-                        ///ovde ubaciti sliku Image not Found
-                        Controls.Add(label);
+                    picturebox1.Image = Image.FromFile("../../Resources/NotFound.png");
+                    ///ovde ubaciti sliku Image not Found
+                    picturebox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    Controls.Add(label);
+                    Controls.Add(picturebox1);
                     }
                     else
                     {
                         picturebox1.Image = Image.FromFile("../../Resources/" + k.naslov + ".jpg");
-
                         picturebox1.SizeMode = PictureBoxSizeMode.StretchImage;
                         Controls.Add(label);
                         Controls.Add(picturebox1);
                     }
-
-                    loc1 += 90;
-                    if(loc1 > 700)
+                    loc1 +=110; // razmak izmedju slika u redu
+                    if(loc1 > 900)
                     {
                         loc1 = 10;
-                        loc2 += 110;
+                        loc2 += 160;
                     }
-
               //OpenFileDialog fd = new OpenFileDialog();
                 
              //   picturebox1.MouseDoubleClick += new MouseEventHandler((o, a) => fd.ShowDialog());
-                
-                    
-                
                 }
-
-            
-            
-
         }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
            // this.Controls.Clear();
             for (int i = 0; i <5 ; i++)
             {
@@ -106,29 +97,18 @@ namespace Library
                         this.Controls.Remove(c);
                 }
             }
-      
-
-            
         }
-
         private void btnIzaberi_Click(object sender, EventArgs e)
         {
-            
              var connectionString = "mongodb://localhost/?safe=true";
             var server = MongoServer.Create(connectionString);
             var database = server.GetDatabase("Biblioteka");
-
-            
-
 
             var collection = database.GetCollection<Knjiga>("knjige");
 
             string zanr = comboBox1.SelectedItem.ToString();
 
             MongoCursor<Knjiga> knjige = collection.Find(Query.EQ("zanr",zanr));
-
-
-
 
             int loc1 = 10;
             int loc2 = 100;
@@ -140,25 +120,36 @@ namespace Library
 
                 // picturebox1[i].Name = "picturebox1";
                 picturebox1.Location = new Point(loc1, loc2);
-                label.Location = new Point(loc1, loc2 + 80);
+                label.Location = new Point(loc1, loc2 + 130);
                 label.Text = k.naslov;
                 label.Size = new Size(80, 20);
 
-                picturebox1.Size = new Size(80, 80);
+                picturebox1.Size = new Size(100, 130);
                 picturebox1.BackColor = Color.Aqua;
 
-                picturebox1.Image = Image.FromFile("../../Resources/" + k.naslov + ".jpg");
-
-                picturebox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                Controls.Add(picturebox1);
-                Controls.Add(label);
-                loc1 += 90;
-                if (loc1 > 700)
+                picturebox1.BorderStyle = BorderStyle.Fixed3D;
+                string path = @"../../Resources/" + k.naslov + ".jpg";
+                if (!File.Exists(path))
+                {
+                    picturebox1.Image = Image.FromFile("../../Resources/NotFound.png");
+                    ///ovde ubaciti sliku Image not Found
+                    picturebox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    Controls.Add(label);
+                    Controls.Add(picturebox1);
+                }
+                else
+                {
+                    picturebox1.Image = Image.FromFile("../../Resources/" + k.naslov + ".jpg");
+                    picturebox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    Controls.Add(label);
+                    Controls.Add(picturebox1);
+                }
+                loc1 += 110;
+                if (loc1 > 900)
                 {
                     loc1 = 10;
-                    loc2 += 110;
+                    loc2 += 160;
                 }
-
                 //OpenFileDialog fd = new OpenFileDialog();
 
                 picturebox1.MouseDoubleClick += new MouseEventHandler((o, a) => fd.ShowDialog());
@@ -171,9 +162,10 @@ namespace Library
             f.Show();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
         }
+        #endregion
     }
 }

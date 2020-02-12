@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClanBiblioteke));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnVratiKnjigu = new System.Windows.Forms.Button();
             this.list = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -79,6 +79,7 @@
             this.ttImePisca = new System.Windows.Forms.ToolTip(this.components);
             this.ttNaslovKnjige = new System.Windows.Forms.ToolTip(this.components);
             this.ttIznajmi = new System.Windows.Forms.ToolTip(this.components);
+            this.ttPassword = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -91,10 +92,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.btnVratiKnjigu);
             this.panel1.Controls.Add(this.list);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -107,13 +108,24 @@
             this.panel1.Size = new System.Drawing.Size(647, 236);
             this.panel1.TabIndex = 0;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label14.Location = new System.Drawing.Point(347, 7);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(120, 20);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "Iznajmljene knjige";
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft MHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label13.Location = new System.Drawing.Point(3, 206);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(72, 26);
+            this.label13.Size = new System.Drawing.Size(77, 24);
             this.label13.TabIndex = 24;
             this.label13.Text = "label13";
             // 
@@ -123,11 +135,12 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(532, 90);
+            this.button1.Location = new System.Drawing.Point(532, 55);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 63);
             this.button1.TabIndex = 9;
             this.button1.Text = "Promeni username ili password";
+            this.ttPassword.SetToolTip(this.button1, "Ako zelite da promeni svoje korisnicko ime ili lozinku.");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -137,7 +150,7 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(532, 159);
+            this.button2.Location = new System.Drawing.Point(532, 124);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(108, 42);
             this.button2.TabIndex = 8;
@@ -145,27 +158,14 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnVratiKnjigu
-            // 
-            this.btnVratiKnjigu.BackColor = System.Drawing.Color.Aquamarine;
-            this.btnVratiKnjigu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVratiKnjigu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVratiKnjigu.Location = new System.Drawing.Point(532, 5);
-            this.btnVratiKnjigu.Name = "btnVratiKnjigu";
-            this.btnVratiKnjigu.Size = new System.Drawing.Size(108, 59);
-            this.btnVratiKnjigu.TabIndex = 7;
-            this.btnVratiKnjigu.Text = "Iznajmljene knjige";
-            this.btnVratiKnjigu.UseVisualStyleBackColor = false;
-            this.btnVratiKnjigu.Click += new System.EventHandler(this.btnVratiKnjigu_Click);
-            // 
             // list
             // 
             this.list.Cursor = System.Windows.Forms.Cursors.Hand;
             this.list.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.list.FormattingEnabled = true;
-            this.list.Location = new System.Drawing.Point(352, 4);
+            this.list.Location = new System.Drawing.Point(352, 30);
             this.list.Name = "list";
-            this.list.Size = new System.Drawing.Size(174, 199);
+            this.list.Size = new System.Drawing.Size(174, 173);
             this.list.TabIndex = 6;
             // 
             // label6
@@ -270,7 +270,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(331, 296);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // lblIzdavac
             // 
@@ -381,20 +380,22 @@
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Cross;
             this.pictureBox1.Location = new System.Drawing.Point(759, 18);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(222, 239);
+            this.pictureBox1.Size = new System.Drawing.Size(226, 239);
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
             // btnIznajmi
             // 
+            this.btnIznajmi.BackColor = System.Drawing.Color.GreenYellow;
             this.btnIznajmi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIznajmi.Location = new System.Drawing.Point(701, 506);
+            this.btnIznajmi.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIznajmi.Location = new System.Drawing.Point(798, 513);
             this.btnIznajmi.Name = "btnIznajmi";
-            this.btnIznajmi.Size = new System.Drawing.Size(113, 35);
+            this.btnIznajmi.Size = new System.Drawing.Size(157, 47);
             this.btnIznajmi.TabIndex = 17;
-            this.btnIznajmi.Text = "Iznajmi";
+            this.btnIznajmi.Text = "Posalji zahtev za izabranu knjigu";
             this.ttIznajmi.SetToolTip(this.btnIznajmi, "Iznajmljivanje selektovane knjige.");
-            this.btnIznajmi.UseVisualStyleBackColor = true;
+            this.btnIznajmi.UseVisualStyleBackColor = false;
             this.btnIznajmi.Click += new System.EventHandler(this.btnIznajmi_Click);
             // 
             // label8
@@ -513,7 +514,7 @@
             this.panel4.Controls.Add(this.rbRoman);
             this.panel4.Location = new System.Drawing.Point(373, 347);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(301, 217);
+            this.panel4.Size = new System.Drawing.Size(301, 224);
             this.panel4.TabIndex = 23;
             // 
             // label12
@@ -733,9 +734,10 @@
         private System.Windows.Forms.ToolTip ttImePisca;
         private System.Windows.Forms.ToolTip ttSearch;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnVratiKnjigu;
         private System.Windows.Forms.ListBox list;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ToolTip ttPassword;
+        private System.Windows.Forms.Label label14;
     }
 }

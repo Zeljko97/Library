@@ -78,7 +78,7 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(12, 340);
+            this.btnBack.Location = new System.Drawing.Point(29, 340);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(113, 31);
             this.btnBack.TabIndex = 6;
@@ -107,7 +107,7 @@
             this.btnLogIn.Location = new System.Drawing.Point(559, 218);
             this.btnLogIn.Margin = new System.Windows.Forms.Padding(1);
             this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(200, 43);
+            this.btnLogIn.Size = new System.Drawing.Size(190, 43);
             this.btnLogIn.TabIndex = 5;
             this.btnLogIn.UseVisualStyleBackColor = true;
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
@@ -116,10 +116,10 @@
             // 
             this.pictureBox1.BackgroundImage = global::Library.Properties.Resources.Administrator;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(29, 28);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(345, 313);
+            this.pictureBox1.Size = new System.Drawing.Size(329, 298);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -129,7 +129,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(838, 383);
+            this.ClientSize = new System.Drawing.Size(828, 383);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.btnBack);

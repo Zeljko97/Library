@@ -8,6 +8,11 @@ db.knjige.insert({"naslov":"Tajna uspesne dece", "autor":"Pol Taf", "zanr":"psih
 db.knjige.insert({"naslov":"Macak i skakutavo jaje", "autor":"Andrija Milosevic", "zanr":"poezija", "izdavac":"Laguna", "povez":"meki", "brojStrana":30, "brojPrimeraka":16, "oznake":["decja knjiga","domaci autor","poezija"]});
 db.knjige.insert({"naslov":"Zlocin i kazna", "autor":"Fjodor Mihailovic Dostojevski", "zanr":"klasika", "izdavac":"Laguna", "povez":"meki", "brojStrana":300, "brojPrimeraka":20, "oznake":["roman","strani autor","klasika"]});
 db.knjige.insert({"naslov":"Palcica", "autor":"Hans Kristijan Andersen", "zanr":"decja knjiga", "izdavac":"Laguna", "povez":"meki", "brojStrana":60, "brojPrimeraka":9, "oznake":["decja knjiga","strani autor"]});
+db.knjige.insert({"naslov":"Travnicka hronika", "autor":"Ivo Andric", "zanr":"roman", "izdavac":"Vulkan", "povez":"tvrdi", "brojStrana":458, "brojPrimeraka":5, "oznake":["roman","domaci autor"]});
+db.knjige.insert({"naslov":"Osinje gnezdo", "autor":"Vlada Arsic", "zanr":"beletristika", "izdavac":"Laguna", "povez":"meki", "brojStrana":344, "brojPrimeraka":7, "oznake":["beletristika","domaci autor","publicistika"]});
+db.knjige.insert({"naslov":"Vasarski madjionicar", "autor":"Jelena Leongold", "zanr":"roman", "izdavac":"Arhipelag", "povez":"meki", "brojStrana":151, "brojPrimeraka":4, "oznake":["domaci autor","roman"]});
+db.knjige.insert({"naslov":"Hajduci", "autor":"Branislav Nusic", "zanr":"decja knjiga", "izdavac":"Laguna", "povez":"tvrdi", "brojStrana":224, "brojPrimeraka":10, "oznake":["domaci autor","decja knjiga","klasika"]});
+db.knjige.insert({"naslov":"Odabrane pripovetke", "autor":"Branislav Nusic", "zanr":"klasika", "izdavac":"Laguna", "povez":"meki", "brojStrana":216, "brojPrimeraka":14, "oznake":["domaci autor","klasika"]});
 
 
 /////clanovi
@@ -16,18 +21,13 @@ db.clanovi.insert({"brojClanskeKarte":"1", "ime":"Jovan", "prezime":"Peric", "za
 db.clanovi.insert({"brojClanskeKarte":"2", "ime":"Marko", "prezime":"Jankovic", "zanimanje":"Advokat", "adresa":"Dragise Cvetkovica 21", "brojTelefona":"061234393", "brojLicneKarte":"179647", "username":"user2","password":"mongo"});
 db.clanovi.insert({"brojClanskeKarte":"3", "ime":"Milan", "prezime":"Markovic", "zanimanje":"Programer", "adresa":"Trg Republike A2, Nis", "brojTelefona":"0635847133", "brojLicneKarte":"694712", "username":"user2","password":"mongo"});
 db.clanovi.insert({"brojClanskeKarte":"4", "ime":"Marko", "prezime":"Miloradovic", "zanimanje":"Programer", "adresa":"Sedmi Juli 38/20, Nis", "brojTelefona":"0692011026", "brojLicneKarte":"694712"});
-//dal da dodajemo iznajmljene knjige? kao iz onog primera oznake da bude Iznajmljene knjige:
 
 //////Zaposleni
-ime,prezime,jmbg,datum_rodjenja,radni_staz
 
-
-db.zaposleni.insert({"ime":"Marko","prezime":"Miloradovic","JMBG":"1809997752012","datum_rodjenja":"18-09-1997","radni_staz":4,"username":"Mare97","password":"mongo"});
+db.zaposleni.insert({"ime":"Marko","prezime":"Miloradovic","JMBG":"1809997752012","datum_rodjenja":"18-09-1997","radni_staz":4,"username":"mare","password":"mongo"});
 db.zaposleni.insert({"ime":"Milena","prezime":"Stanisic","JMBG":"1542015447777","datum_rodjenja":"02-04-1990","radni_staz":7,"username":"Mima","password":"mongo11"});
 db.zaposleni.insert({"ime":"Ivana","prezime":"Novakovic","JMBG":"1505995741114","datum_rodjenja":"15-05-1995","radni_staz":6,"username":"Ivana123","password":"123123"});
 db.zaposleni.insert({"ime":"Zeljko","prezime":"Rmza","JMBG":"1010994","datum_rodjenja":"10-10-1994","radni_staz":2,"username":"Zeljko","password":"rmza"});
-
-
 
 
 ///sektori

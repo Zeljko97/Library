@@ -198,7 +198,7 @@
             this.btnPromeni.Location = new System.Drawing.Point(250, 283);
             this.btnPromeni.Name = "btnPromeni";
             this.btnPromeni.Size = new System.Drawing.Size(172, 34);
-            this.btnPromeni.TabIndex = 24;
+            this.btnPromeni.TabIndex = 22;
             this.btnPromeni.Text = "Promeni";
             this.btnPromeni.UseVisualStyleBackColor = false;
             this.btnPromeni.Click += new System.EventHandler(this.btnPromeni_Click);
@@ -211,7 +211,7 @@
             this.button2.Location = new System.Drawing.Point(26, 283);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 34);
-            this.button2.TabIndex = 25;
+            this.button2.TabIndex = 23;
             this.button2.Text = "<- Back";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);

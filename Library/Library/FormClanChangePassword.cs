@@ -48,12 +48,10 @@ namespace Library
                 txtUsernameNew.Visible = false;
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnPromeni_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtUsernameNew.Text))
@@ -83,13 +81,12 @@ namespace Library
                 var database = server.GetDatabase("Biblioteka");
 
                 var collection = database.GetCollection<Clan>("clanovi");
-                //ovde treba ovo za oznake,ali to nisam mogao provaljujem
-                var query = (Query.And(Query.EQ("Id", FormClanLogIn.trClan.Id),Query.EQ("username",FormClanLogIn.trClan.username)));
-                ////////////////// Ovde da provalimo kako da update vise stvari.
-                var update = MongoDB.Driver.Builders.Update.Set("password", txtPasswordRetype.Text);
-                var update2 = MongoDB.Driver.Builders.Update.Set("username", txtUsernameNew.Text);
-                collection.Update(query, update);   // ne kapiram zasto ne radi.
-                //collection.Update(query, update2);
+                var query = Query.EQ("_id", FormClanLogIn.trClan.Id);
+                var update = MongoDB.Driver.Builders.Update.Set("password", BsonValue.Create(txtPasswordRetype.Text));
+                var update2 = MongoDB.Driver.Builders.Update.Set("username", BsonValue.Create(txtUsernameNew.Text));
+                //nije optimalno ali radi ipak
+                collection.Update(query, update);  
+                collection.Update(query, update2);
                 MessageBox.Show("Uspesno ste azurirali profil.","Update je uspesan",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 this.Close();
             }

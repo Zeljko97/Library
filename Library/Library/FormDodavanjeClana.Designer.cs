@@ -52,14 +52,17 @@
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(194, 29);
             this.txtIme.TabIndex = 29;
+            this.txtIme.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIme_KeyPress);
             // 
             // txtBroj
             // 
             this.txtBroj.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBroj.Location = new System.Drawing.Point(146, 12);
+            this.txtBroj.MaxLength = 5;
             this.txtBroj.Name = "txtBroj";
             this.txtBroj.Size = new System.Drawing.Size(194, 29);
             this.txtBroj.TabIndex = 28;
+            this.txtBroj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBroj_KeyPress);
             // 
             // lblIme
             // 
@@ -100,6 +103,7 @@
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(194, 29);
             this.txtPrezime.TabIndex = 32;
+            this.txtPrezime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrezime_KeyPress);
             // 
             // lblZanimanje
             // 
@@ -132,6 +136,7 @@
             this.txtBrojTelefona.Name = "txtBrojTelefona";
             this.txtBrojTelefona.Size = new System.Drawing.Size(194, 29);
             this.txtBrojTelefona.TabIndex = 37;
+            this.txtBrojTelefona.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBrojTelefona_KeyPress);
             // 
             // txtAdresa
             // 
@@ -172,6 +177,7 @@
             this.txtBrojLicneKarte.Name = "txtBrojLicneKarte";
             this.txtBrojLicneKarte.Size = new System.Drawing.Size(194, 29);
             this.txtBrojLicneKarte.TabIndex = 40;
+            this.txtBrojLicneKarte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBrojLicneKarte_KeyPress);
             // 
             // lblBrojLicneKarte
             // 
@@ -203,7 +209,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
-            this.ClientSize = new System.Drawing.Size(382, 300);
+            this.ClientSize = new System.Drawing.Size(373, 300);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.txtBrojLicneKarte);
             this.Controls.Add(this.lblBrojLicneKarte);
@@ -224,6 +230,7 @@
             this.MinimizeBox = false;
             this.Name = "FormDodavanjeClana";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodavanje clana";
             this.ResumeLayout(false);
             this.PerformLayout();

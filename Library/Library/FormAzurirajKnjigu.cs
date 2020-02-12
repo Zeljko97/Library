@@ -24,6 +24,7 @@ namespace Library
             InitializeComponent();
         }
 
+        #region Funkcionalnost
         private void FormAzurirajKnjigu_Load(object sender, EventArgs e)
         {
             txtAutor.Text = Admin.azuriranje.autor;
@@ -34,7 +35,6 @@ namespace Library
             cbPovez.SelectedItem = Admin.azuriranje.povez;
             cbZanr.SelectedItem = Admin.azuriranje.zanr;
         }
-
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtNaslov.Text))
@@ -83,7 +83,6 @@ namespace Library
 
                 var query = Query.EQ("_id", Admin.azuriranje.Id);
 
-            
                 var update = MongoDB.Driver.Builders.Update.Set("naslov",BsonValue.Create(txtNaslov.Text));
                 collection.Update(query, update);
                 update = MongoDB.Driver.Builders.Update.Set("izdavac", BsonValue.Create(txtIzdavac.Text));
@@ -99,13 +98,23 @@ namespace Library
                 update = MongoDB.Driver.Builders.Update.Set("brojPrimeraka", BsonValue.Create(txtBrojPrimeraka.Text));
                 collection.Update(query, update);
 
-              
-                    
-      
-               
                 MessageBox.Show(txtNaslov.Text + " knjiga je uspesno izmenjena", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }
+        #endregion
+
+        #region Ogranicenja
+        private void txtBrojStrana_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+        private void txtBrojPrimeraka_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+        #endregion
     }
 }

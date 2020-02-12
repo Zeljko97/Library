@@ -57,14 +57,14 @@ namespace Library
                 var server = MongoServer.Create(connectionString);
                 var database = server.GetDatabase("Biblioteka");
 
-                var collection = database.GetCollection<Zaposleni>("clanovi");
+                var collection = database.GetCollection<Zaposleni>("zaposleni");
                 //ovde treba ovo za oznake,ali to nisam mogao provaljujem
-                var query = (Query.And(Query.EQ("Id", FormZaposleniLogging.logovani.Id), Query.EQ("username", FormZaposleniLogging.logovani.username)));
+                var query = Query.EQ("_id", FormZaposleniLogging.logovani.Id);
                 ////////////////// Ovde da provalimo kako da update vise stvari.
-                var update = MongoDB.Driver.Builders.Update.Set("password", txtPasswordRetype.Text);
-                var update2 = MongoDB.Driver.Builders.Update.Set("username", txtUsernameNew.Text);
-                collection.Update(query, update);   // ne kapiram zasto ne radi.
-                //collection.Update(query, update2);
+                var update = MongoDB.Driver.Builders.Update.Set("password",BsonValue.Create(txtPasswordRetype.Text));
+                var update2 = MongoDB.Driver.Builders.Update.Set("username", BsonValue.Create(txtUsernameNew.Text));
+                collection.Update(query, update);
+                collection.Update(query, update2);
                 MessageBox.Show("Uspesno ste azurirali profil.", "Update je uspesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

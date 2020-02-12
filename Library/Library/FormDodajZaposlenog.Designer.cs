@@ -45,9 +45,11 @@
             // 
             this.txtRadniStaz.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRadniStaz.Location = new System.Drawing.Point(149, 116);
+            this.txtRadniStaz.MaxLength = 2;
             this.txtRadniStaz.Name = "txtRadniStaz";
             this.txtRadniStaz.Size = new System.Drawing.Size(173, 29);
             this.txtRadniStaz.TabIndex = 19;
+            this.txtRadniStaz.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRadniStaz_KeyPress);
             // 
             // txtJMBG
             // 
@@ -56,6 +58,7 @@
             this.txtJMBG.Name = "txtJMBG";
             this.txtJMBG.Size = new System.Drawing.Size(173, 29);
             this.txtJMBG.TabIndex = 18;
+            this.txtJMBG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJMBG_KeyPress);
             // 
             // txtPrezime
             // 
@@ -64,6 +67,7 @@
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(173, 29);
             this.txtPrezime.TabIndex = 17;
+            this.txtPrezime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrezime_KeyPress);
             // 
             // txtIme
             // 
@@ -72,6 +76,7 @@
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(173, 29);
             this.txtIme.TabIndex = 16;
+            this.txtIme.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIme_KeyPress);
             // 
             // label4
             // 
@@ -125,9 +130,9 @@
             // 
             this.btnDodaj.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodaj.Location = new System.Drawing.Point(107, 198);
+            this.btnDodaj.Location = new System.Drawing.Point(89, 195);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(120, 35);
+            this.btnDodaj.Size = new System.Drawing.Size(155, 40);
             this.btnDodaj.TabIndex = 21;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = false;
@@ -137,21 +142,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(7, 156);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 151);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 20);
+            this.label1.Size = new System.Drawing.Size(142, 24);
             this.label1.TabIndex = 22;
             this.label1.Text = "Datum rodjenja:";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(149, 156);
+            this.dateTimePicker1.Location = new System.Drawing.Point(149, 151);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(96, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(173, 29);
             this.dateTimePicker1.TabIndex = 23;
             // 
             // FormDodajZaposlenog
@@ -176,7 +182,7 @@
             this.MinimizeBox = false;
             this.Name = "FormDodajZaposlenog";
             this.ShowIcon = false;
-            this.Text = "Novi zaposleni";
+            this.Text = "Dodavanje novog zaposlenog";
             this.ResumeLayout(false);
             this.PerformLayout();
 

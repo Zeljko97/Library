@@ -64,12 +64,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnIzadavanjeZahtev = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnVracenaKnjiga = new System.Windows.Forms.Button();
             this.btnPodaci = new System.Windows.Forms.Button();
             this.btnIznajmljeneKnjige = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btnIzadavanjeZahtev = new System.Windows.Forms.Button();
+            this.ttIzdavanjeKnjige = new System.Windows.Forms.ToolTip(this.components);
+            this.ttVratiKnjigu = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -294,14 +296,18 @@
             // 
             // btnIzdavanje
             // 
+            this.btnIzdavanje.BackColor = System.Drawing.Color.GhostWhite;
             this.btnIzdavanje.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIzdavanje.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIzdavanje.Location = new System.Drawing.Point(301, 167);
+            this.btnIzdavanje.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnIzdavanje.Location = new System.Drawing.Point(301, 186);
             this.btnIzdavanje.Name = "btnIzdavanje";
-            this.btnIzdavanje.Size = new System.Drawing.Size(139, 35);
+            this.btnIzdavanje.Size = new System.Drawing.Size(139, 52);
             this.btnIzdavanje.TabIndex = 20;
-            this.btnIzdavanje.Text = "Izdaj knjigu";
-            this.btnIzdavanje.UseVisualStyleBackColor = true;
+            this.btnIzdavanje.Text = "Direktno izdavanje";
+            this.ttIzdavanjeKnjige.SetToolTip(this.btnIzdavanje, "Direktno izdavanje podrazumeva da selektujete knjigu iz liste koju imate na raspo" +
+        "laganju i nekog od clanova iznad sektora sto se nalazi.");
+            this.btnIzdavanje.UseVisualStyleBackColor = false;
             this.btnIzdavanje.Click += new System.EventHandler(this.btnIzdavanje_Click_1);
             // 
             // panel1
@@ -353,6 +359,7 @@
             this.btnUserPass.Text = "Promeni Username/Password";
             this.ttPromena.SetToolTip(this.btnUserPass, "Mogucnost da se promeni username i password zaposlenog");
             this.btnUserPass.UseVisualStyleBackColor = false;
+            this.btnUserPass.Click += new System.EventHandler(this.btnUserPass_Click);
             // 
             // btnLogout
             // 
@@ -382,7 +389,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(334, 88);
+            this.label5.Location = new System.Drawing.Point(334, 92);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 24);
             this.label5.TabIndex = 25;
@@ -390,19 +397,20 @@
             // 
             // btnUcitajZahteve
             // 
+            this.btnUcitajZahteve.BackColor = System.Drawing.Color.GhostWhite;
             this.btnUcitajZahteve.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUcitajZahteve.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUcitajZahteve.Location = new System.Drawing.Point(26, 14);
             this.btnUcitajZahteve.Name = "btnUcitajZahteve";
-            this.btnUcitajZahteve.Size = new System.Drawing.Size(240, 57);
+            this.btnUcitajZahteve.Size = new System.Drawing.Size(240, 51);
             this.btnUcitajZahteve.TabIndex = 26;
             this.btnUcitajZahteve.Text = "Ucitaj pristigle zahteve za izdavanje knjige";
-            this.btnUcitajZahteve.UseVisualStyleBackColor = true;
+            this.btnUcitajZahteve.UseVisualStyleBackColor = false;
             this.btnUcitajZahteve.Click += new System.EventHandler(this.btnUcitajZahteve_Click);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.SeaShell;
+            this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.rbBeletristika);
             this.panel2.Controls.Add(this.rbRoman);
@@ -437,7 +445,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(322, 20);
+            this.label6.Location = new System.Drawing.Point(318, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 24);
             this.label6.TabIndex = 30;
@@ -473,66 +481,88 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(613, 291);
             this.panel3.TabIndex = 32;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // btnIzadavanjeZahtev
+            // 
+            this.btnIzadavanjeZahtev.BackColor = System.Drawing.Color.GhostWhite;
+            this.btnIzadavanjeZahtev.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIzadavanjeZahtev.Location = new System.Drawing.Point(26, 244);
+            this.btnIzadavanjeZahtev.Name = "btnIzadavanjeZahtev";
+            this.btnIzadavanjeZahtev.Size = new System.Drawing.Size(240, 40);
+            this.btnIzadavanjeZahtev.TabIndex = 36;
+            this.btnIzadavanjeZahtev.Text = "Izdaj na osnovu zahteva";
+            this.btnIzadavanjeZahtev.UseVisualStyleBackColor = false;
+            this.btnIzadavanjeZahtev.Click += new System.EventHandler(this.btnIzadavanjeZahtev_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataGridView2.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridView2.Location = new System.Drawing.Point(26, 72);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(240, 166);
+            this.dataGridView2.TabIndex = 35;
             // 
             // btnVracenaKnjiga
             // 
-            this.btnVracenaKnjiga.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnVracenaKnjiga.Location = new System.Drawing.Point(301, 220);
+            this.btnVracenaKnjiga.BackColor = System.Drawing.Color.GhostWhite;
+            this.btnVracenaKnjiga.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnVracenaKnjiga.Location = new System.Drawing.Point(301, 244);
             this.btnVracenaKnjiga.Name = "btnVracenaKnjiga";
-            this.btnVracenaKnjiga.Size = new System.Drawing.Size(139, 36);
+            this.btnVracenaKnjiga.Size = new System.Drawing.Size(139, 40);
             this.btnVracenaKnjiga.TabIndex = 34;
             this.btnVracenaKnjiga.Text = "Vratiti knjigu";
-            this.btnVracenaKnjiga.UseVisualStyleBackColor = true;
+            this.ttVratiKnjigu.SetToolTip(this.btnVracenaKnjiga, "Iz liste knjiga koju je iznajmio izabrani korisnik,selektovati jednu i time zapos" +
+        "leni potvrduje da je selektovani clan vratio odabranu knjigu.");
+            this.btnVracenaKnjiga.UseVisualStyleBackColor = false;
             this.btnVracenaKnjiga.Click += new System.EventHandler(this.btnVracenaKnjiga_Click);
             // 
             // btnPodaci
             // 
+            this.btnPodaci.BackColor = System.Drawing.Color.GhostWhite;
             this.btnPodaci.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnPodaci.Location = new System.Drawing.Point(465, 200);
+            this.btnPodaci.Location = new System.Drawing.Point(476, 186);
             this.btnPodaci.Name = "btnPodaci";
-            this.btnPodaci.Size = new System.Drawing.Size(120, 56);
+            this.btnPodaci.Size = new System.Drawing.Size(120, 52);
             this.btnPodaci.TabIndex = 33;
             this.btnPodaci.Text = "Ucitaj podatke o clanu";
-            this.btnPodaci.UseVisualStyleBackColor = true;
+            this.btnPodaci.UseVisualStyleBackColor = false;
             this.btnPodaci.Click += new System.EventHandler(this.btnPodaci_Click);
             // 
             // btnIznajmljeneKnjige
             // 
+            this.btnIznajmljeneKnjige.BackColor = System.Drawing.Color.GhostWhite;
             this.btnIznajmljeneKnjige.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnIznajmljeneKnjige.Location = new System.Drawing.Point(465, 3);
+            this.btnIznajmljeneKnjige.Location = new System.Drawing.Point(476, 9);
             this.btnIznajmljeneKnjige.Name = "btnIznajmljeneKnjige";
-            this.btnIznajmljeneKnjige.Size = new System.Drawing.Size(120, 62);
+            this.btnIznajmljeneKnjige.Size = new System.Drawing.Size(120, 51);
             this.btnIznajmljeneKnjige.TabIndex = 32;
             this.btnIznajmljeneKnjige.Text = "Ucitaj iznajmljene knjige";
-            this.btnIznajmljeneKnjige.UseVisualStyleBackColor = true;
+            this.btnIznajmljeneKnjige.UseVisualStyleBackColor = false;
             this.btnIznajmljeneKnjige.Click += new System.EventHandler(this.button1_Click);
             // 
             // listBox1
             // 
+            this.listBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(465, 72);
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(465, 66);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(141, 121);
+            this.listBox1.Size = new System.Drawing.Size(141, 116);
             this.listBox1.TabIndex = 31;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(26, 88);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView2.TabIndex = 35;
-            // 
-            // btnIzadavanjeZahtev
-            // 
-            this.btnIzadavanjeZahtev.Location = new System.Drawing.Point(26, 244);
-            this.btnIzadavanjeZahtev.Name = "btnIzadavanjeZahtev";
-            this.btnIzadavanjeZahtev.Size = new System.Drawing.Size(159, 40);
-            this.btnIzadavanjeZahtev.TabIndex = 36;
-            this.btnIzadavanjeZahtev.Text = "Izdaj na osnovu zahteva";
-            this.btnIzadavanjeZahtev.UseVisualStyleBackColor = true;
-            this.btnIzadavanjeZahtev.Click += new System.EventHandler(this.btnIzadavanjeZahtev_Click);
             // 
             // FormZaposleni
             // 
@@ -607,5 +637,7 @@
         private System.Windows.Forms.Button btnVracenaKnjiga;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btnIzadavanjeZahtev;
+        private System.Windows.Forms.ToolTip ttIzdavanjeKnjige;
+        private System.Windows.Forms.ToolTip ttVratiKnjigu;
     }
 }
