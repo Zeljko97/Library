@@ -87,7 +87,7 @@ namespace Library
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
            // this.Controls.Clear();
-            for (int i = 0; i <5 ; i++)
+            for (int i = 0; i <6 ; i++)
             {
                 foreach (Control c in Controls)
                 {

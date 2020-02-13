@@ -99,3 +99,5 @@ C:\GITHUB\Library\Library\Library\obj\Debug\Library.exe
 C:\GITHUB\Library\Library\Library\obj\Debug\Library.pdb
 C:\GITHUB\Library\Library\Library\bin\Debug\Library.pdb
 E:\GitHub\Library\Library\Library\obj\Debug\Library.FormClanSingIn.resources
+C:\GITHUB\Library\Library\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+C:\GITHUB\Library\Library\Library\obj\Debug\Library.FormAzurirajClana.resources

@@ -1,5 +1,8 @@
 use Biblioteka
 
+
+db.admin.insert({"username":"admin", "password":"admin"});
+
 db.knjige.insert({"naslov":"Na Drini cuprija","autor":"Ivo Andric", "zanr":"roman", "izdavac":"Laguna","povez":"tvrdi", "brojStrana":230, "brojPrimeraka":1, "oznake":["roman","domaci autor"]});
 db.knjige.insert({"naslov":"Blago cara Radovana","autor":"Jovan Ducic", "zanr":"roman", "izdavac":"Vulkan", "povez":"tvrdi", "brojStrana":180, "brojPrimeraka":20, "oznake":["roman","domaci autor"]});
 db.knjige.insert({"naslov":"Dobro jutro Beograde","autor":"Dusko Radovic", "zanr":"publicistika", "izdavac":"Laguna", "povez":"tvrdi", "brojStrana":300, "brojPrimeraka":10, "oznake":["publicistika","domaci autor"]});
@@ -10,9 +13,21 @@ db.knjige.insert({"naslov":"Zlocin i kazna", "autor":"Fjodor Mihailovic Dostojev
 db.knjige.insert({"naslov":"Palcica", "autor":"Hans Kristijan Andersen", "zanr":"decja knjiga", "izdavac":"Laguna", "povez":"meki", "brojStrana":60, "brojPrimeraka":9, "oznake":["decja knjiga","strani autor"]});
 db.knjige.insert({"naslov":"Travnicka hronika", "autor":"Ivo Andric", "zanr":"roman", "izdavac":"Vulkan", "povez":"tvrdi", "brojStrana":458, "brojPrimeraka":5, "oznake":["roman","domaci autor"]});
 db.knjige.insert({"naslov":"Osinje gnezdo", "autor":"Vlada Arsic", "zanr":"beletristika", "izdavac":"Laguna", "povez":"meki", "brojStrana":344, "brojPrimeraka":7, "oznake":["beletristika","domaci autor","publicistika"]});
-db.knjige.insert({"naslov":"Vasarski madjionicar", "autor":"Jelena Leongold", "zanr":"roman", "izdavac":"Arhipelag", "povez":"meki", "brojStrana":151, "brojPrimeraka":4, "oznake":["domaci autor","roman"]});
+db.knjige.insert({"naslov":"Vasarski madjionicar", "autor":"Jelena Leongold", "zanr":"roman", "izdavac":"Arhipelag", "povez":"meki", "brojStrana":151, "brojPrimeraka":4, "oznake":["roman"]});
 db.knjige.insert({"naslov":"Hajduci", "autor":"Branislav Nusic", "zanr":"decja knjiga", "izdavac":"Laguna", "povez":"tvrdi", "brojStrana":224, "brojPrimeraka":10, "oznake":["domaci autor","decja knjiga","klasika"]});
 db.knjige.insert({"naslov":"Odabrane pripovetke", "autor":"Branislav Nusic", "zanr":"klasika", "izdavac":"Laguna", "povez":"meki", "brojStrana":216, "brojPrimeraka":14, "oznake":["domaci autor","klasika"]});
+
+db.knjige.insert({"naslov":"Postovana deco", "autor":"Dusko Radovic", "zanr":"decja knjiga", "izdavac":"Laguna", "povez":"meki", "brojStrana":56, "brojPrimeraka":10, "oznake":["domaci autor","poezija"]});
+
+db.knjige.insert({"naslov":"Skola za spijune", "autor":"Denis Buklin", "zanr":"psihologija", "izdavac":"Sluzbeni glasnik", "povez":"meki", "brojStrana":116, "brojPrimeraka":4, "oznake":["strani autor","roman"]});
+
+db.knjige.insert({"naslov":"Dozivljaji Toma Sojera", "autor":"Mark Tven", "zanr":"klasika", "izdavac":"Laguna", "povez":"meki", "brojStrana":200, "brojPrimeraka":17, "oznake":["strani autor","klasika","decja knjiga"]});
+
+db.knjige.insert({"naslov":"Solunska 28", "autor":"Dr Nele Karajlic", "zanr":"beletristika", "izdavac":"Laguna", "povez":"meki", "brojStrana":216, "brojPrimeraka":10, "oznake":["domaci autor","roman"]});
+
+db.knjige.insert({"naslov":"Pravda za Srbiju", "autor":"Peter Handke", "zanr":"roman", "izdavac":"Vulkan", "povez":"tvrdi", "brojStrana":180, "brojPrimeraka":15, "oznake":["strani autor"]});
+
+db.knjige.insert({"naslov":"Evgenije Onjegin", "autor":"Aleksandar Puskin", "zanr":"klasika", "izdavac":"Laguna", "povez":"meki", "brojStrana":150, "brojPrimeraka":9, "oznake":["strani autor","klasika"]});
 
 
 /////clanovi
@@ -27,11 +42,14 @@ db.clanovi.insert({"brojClanskeKarte":"4", "ime":"Marko", "prezime":"Miloradovic
 db.zaposleni.insert({"ime":"Marko","prezime":"Miloradovic","JMBG":"1809997752012","datum_rodjenja":"18-09-1997","radni_staz":4,"username":"mare","password":"mongo"});
 db.zaposleni.insert({"ime":"Milena","prezime":"Stanisic","JMBG":"1542015447777","datum_rodjenja":"02-04-1990","radni_staz":7,"username":"Mima","password":"mongo11"});
 db.zaposleni.insert({"ime":"Ivana","prezime":"Novakovic","JMBG":"1505995741114","datum_rodjenja":"15-05-1995","radni_staz":6,"username":"Ivana123","password":"123123"});
-db.zaposleni.insert({"ime":"Zeljko","prezime":"Rmza","JMBG":"1010994","datum_rodjenja":"10-10-1994","radni_staz":2,"username":"Zeljko","password":"rmza"});
+db.zaposleni.insert({"ime":"Zeljko","prezime":"Petrovic","JMBG":"1010994","datum_rodjenja":"10-10-1994","radni_staz":2,"username":"Zeljko","password":"zelja"});
 
 
 ///sektori
 
-db.sektori.insert({"oznakaSektora":"1"});
-db.sektori.insert({"oznakaSektora":"2"});
+db.sektori.insert({"oznakaSektora":"1a"});
 db.sektori.insert({"oznakaSektora":"2a"});
+db.sektori.insert({"oznakaSektora":"2b"});
+db.sektori.insert({"oznakaSektora":"3a"});
+db.sektori.insert({"oznakaSektora":"3b"});
+db.sektori.insert({"oznakaSektora":"3c"});

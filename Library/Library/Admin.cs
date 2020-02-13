@@ -22,6 +22,7 @@ namespace Library
     public partial class Admin : Form
     {
         public static Knjiga azuriranje;
+        public static Clan azuriranjeClana;
         public Admin()
         {
             InitializeComponent();
@@ -623,5 +624,30 @@ namespace Library
                 e.Handled = true;
         }
         #endregion
+
+        private void btnAzurirajClana_Click(object sender, EventArgs e)
+        {
+            int index = dataGridView3.CurrentRow.Index;
+            if (dataGridView3.CurrentRow == null)
+            {
+                MessageBox.Show("Clan nije selektovan", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                ObjectId id = ObjectId.Parse(dataGridView3[0, index].Value.ToString());
+                
+
+                var connectionString = "mongodb://localhost/?safe=true";
+                var server = MongoServer.Create(connectionString);
+                var database = server.GetDatabase("Biblioteka");
+                var collection = database.GetCollection<Clan>("clanovi");
+
+                //MongoCursor<Zaposleni> zaposleni = collection.FindAll();
+                var query = Query.EQ("_id", id);
+                azuriranjeClana = collection.FindOne(query);
+                FormAzurirajClana f = new FormAzurirajClana();
+                f.Show();
+            }
+        }
     }
 }

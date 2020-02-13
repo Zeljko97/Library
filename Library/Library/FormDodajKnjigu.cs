@@ -61,11 +61,7 @@ namespace Library
                 MessageBox.Show("Niste uneli zanr knjige.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (String.IsNullOrEmpty(comboBox1.SelectedItem.ToString()))
-            {
-                MessageBox.Show("Niste izabrali u kom sektoru ce se knjiga nalaziti", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            
             else
             {
                 ///tagovi
@@ -99,36 +95,17 @@ namespace Library
                     oznake = lista,
                 };
 
-                //u kom se sektoru nalazi knjiga
-                Sektor sektor = new Sektor();
-                foreach (Sektor s in sektoriCollection.FindAll())
-                {
-                    if (s.oznakaSektora == comboBox1.SelectedItem.ToString())
-                    {
-                        sektor = s;
-                    }
-                }
-                sektor.knjigeUSektoru.Add(new MongoDBRef("knjige", k.naslov));
-                k.Sektor = new MongoDBRef("sektori", sektor.Id);
+           
                 collection.Insert(k);
                 collection.Save(k);
-                sektoriCollection.Save(sektor);
+         
                 MessageBox.Show(txtNaslov.Text + " knjiga je uspesno dodata", "Dodavanje uspesno", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }
         private void FormDodajKnjigu_Load(object sender, EventArgs e)
         {
-            var connectionString = "mongodb://localhost/?safe=true";
-            var server = MongoServer.Create(connectionString);
-            var database = server.GetDatabase("Biblioteka");
-
-            var collection = database.GetCollection<Sektor>("sektori");
-            MongoCursor<Sektor> sektori = collection.FindAll();
-            foreach(Sektor s in sektori.ToArray<Sektor>())
-            {
-                comboBox1.Items.Add(s.oznakaSektora.ToString());
-            }
+           
         }
     }
 }

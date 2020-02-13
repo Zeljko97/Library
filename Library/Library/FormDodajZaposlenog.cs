@@ -47,6 +47,17 @@ namespace Library
                 MessageBox.Show("Niste uneli radni staz.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            else if(String.IsNullOrEmpty(txtUsername.Text))
+            {
+                MessageBox.Show("Niste uneli username.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if(String.IsNullOrEmpty(txtPassword.Text))
+            {
+                MessageBox.Show("Niste uneli password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+            
+            }
             else
             {
                 string user = txtIme.Text + " " + txtPrezime.Text;
@@ -55,9 +66,9 @@ namespace Library
                 var database = server.GetDatabase("Biblioteka");
 
                 var collection = database.GetCollection<Zaposleni>("zaposleni");
-                Zaposleni z = new Zaposleni { ime = txtIme.Text, prezime = txtPrezime.Text, radni_staz = Convert.ToInt32(txtRadniStaz.Text), JMBG = txtJMBG.Text, datum_rodjenja = dateTimePicker1.Text};
+                Zaposleni z = new Zaposleni { ime = txtIme.Text, prezime = txtPrezime.Text, radni_staz = Convert.ToInt32(txtRadniStaz.Text), JMBG = txtJMBG.Text, datum_rodjenja = dateTimePicker1.Text, username = txtUsername.Text, password = txtPassword.Text};
                 collection.Insert(z);
-                MessageBox.Show(txtIme.Text + " " + txtPrezime.Text + " je uspesno dodat","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show(txtIme.Text + " " + txtPrezime.Text + " je uspesno dodat. Username i password zaposlenog su trenutni, zaposleni moze promeniti kada pristupi aplikaciji.","",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 this.Close();
             }
         }

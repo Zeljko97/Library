@@ -86,6 +86,7 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entiteti\Admin.cs" />
     <Compile Include="Entiteti\Clan.cs" />
     <Compile Include="Entiteti\Knjiga.cs" />
     <Compile Include="Entiteti\Sektor.cs" />
@@ -102,6 +103,12 @@
     </Compile>
     <Compile Include="FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAzurirajClana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAzurirajClana.Designer.cs">
+      <DependentUpon>FormAzurirajClana.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAzurirajKnjigu.cs">
       <SubType>Form</SubType>
@@ -191,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAzurirajClana.resx">
+      <DependentUpon>FormAzurirajClana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAzurirajKnjigu.resx">
       <DependentUpon>FormAzurirajKnjigu.cs</DependentUpon>

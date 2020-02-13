@@ -286,6 +286,9 @@ namespace Library
 
             var knjigeColl = database.GetCollection<Knjiga>("knjige");
 
+            listBox1.Items.Clear();
+
+
             Clan clan = new Clan();
             foreach (Clan c in collection.Find(Query.EQ("brojClanskeKarte", cbClanovi.SelectedItem.ToString())))
             {

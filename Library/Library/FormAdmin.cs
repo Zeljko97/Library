@@ -8,10 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Library.Entiteti;
+
+using MongoDB.Driver.Linq;
+using MongoDB.Driver.Builders;
+using MongoDB.Driver;
+using MongoDB.Bson;
 namespace Library
 {
     public partial class FormAdmin : Form
     {
+
+        public static Entiteti.Admin logovaniAdmin;
         public FormAdmin()
         {
             InitializeComponent();
@@ -26,15 +34,33 @@ namespace Library
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "admin" && txtPassword.Text == "mongo")
+              var connectionString = "mongodb://localhost/?safe=true";
+            var server = MongoServer.Create(connectionString);
+            var database = server.GetDatabase("Biblioteka");
+
+            var collection = database.GetCollection<Entiteti.Admin>("admin");
+
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+
+            Entiteti.Admin admin = new Entiteti.Admin();
+
+            foreach(Entiteti.Admin ad in collection.Find(Query.EQ("username", username)))
             {
-                this.Hide();
-                Admin a = new Admin();
-                a.Show();
+                if(ad.password == password)
+                {
+                    logovaniAdmin = ad;
+                    this.Hide();
+                    Admin f = new Admin();
+                    f.Show();
+                }
+
             }
-            else
+
+         
+            if(logovaniAdmin == null)
             {
-                lblError.Text = "Pogresan username ili password.\n Pokusajte ponovo";
+                MessageBox.Show("Pogresan username ili password.");
             }
         }
 

@@ -60,12 +60,12 @@
             // 
             // btnKnjige
             // 
-            this.btnKnjige.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnKnjige.BackColor = System.Drawing.Color.Peru;
             this.btnKnjige.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKnjige.ForeColor = System.Drawing.Color.White;
-            this.btnKnjige.Location = new System.Drawing.Point(380, 12);
+            this.btnKnjige.Location = new System.Drawing.Point(254, 12);
             this.btnKnjige.Name = "btnKnjige";
-            this.btnKnjige.Size = new System.Drawing.Size(219, 49);
+            this.btnKnjige.Size = new System.Drawing.Size(368, 45);
             this.btnKnjige.TabIndex = 5;
             this.btnKnjige.Text = "Pregledaj knjige";
             this.btnKnjige.UseVisualStyleBackColor = false;
@@ -77,7 +77,7 @@
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.Font = new System.Drawing.Font("Kristen ITC", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(12, 281);
+            this.button3.Location = new System.Drawing.Point(698, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(138, 62);
             this.button3.TabIndex = 6;

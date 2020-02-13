@@ -104,7 +104,7 @@
             this.btnLogIn.BackgroundImage = global::Library.Properties.Resources.login;
             this.btnLogIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLogIn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogIn.Location = new System.Drawing.Point(559, 218);
+            this.btnLogIn.Location = new System.Drawing.Point(559, 232);
             this.btnLogIn.Margin = new System.Windows.Forms.Padding(1);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(190, 43);
