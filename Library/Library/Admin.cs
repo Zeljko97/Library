@@ -649,5 +649,10 @@ namespace Library
                 f.Show();
             }
         }
+
+        private void btnDodajSliku_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
